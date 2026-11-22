@@ -1,8 +1,10 @@
 # Kalshi weather markets research
 
+**[Read the one-page research summary (PDF)](Kalshi_Weather_Research_Summary.pdf)**
+
 Backtests and paper-trading models for Kalshi's daily weather markets (city high temperature and daily rain), Nov 2025 to Nov 2026.
 
-**Status:** research and paper trading only. No real money has been traded yet. Results so far do not show a proven forecasting edge. See the one-page summary for the findings.
+**Status:** research and paper trading only. No real money has been traded yet. Results so far do not show a proven forecasting edge. See the [research summary](Kalshi_Weather_Research_Summary.pdf) for the findings.
 
 Built with Claude as a coding assistant; research questions, testing decisions and GIS methods are mine.
 

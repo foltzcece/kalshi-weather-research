@@ -1,0 +1,11 @@
+Scored 15297 past market-prices over 2551 city-days (2025-11-20 to 2026-11-19).
+Accuracy (Brier, lower is better): our model 0.1223  |  market 0.1058  |  50/50 blend 0.1097
+Bias-corrected forecast miss: average 1.68F
+v2 rule, model weight 30%, min edge 3c: n=606 won 53% return per $ -10.9% (+/- 7.1%) not proven
+v2 rule, model weight 30%, min edge 6c: n=0 (too few)
+v2 rule, model weight 50%, min edge 3c: n=1681 won 60% return per $ -5.5% (+/- 3.9%) not proven
+v2 rule, model weight 50%, min edge 6c: n=851 won 56% return per $ -7.5% (+/- 5.8%) not proven
+favourite, no filter: n=605 won 61% return per $ +3.8% (+/- 6.7%) not proven
+favourite + our model at least 0 pts above price: n=28 won 71% return per $ +20.4% (+/- 29.0%) not proven
+favourite + our model at least 5 pts above price: n=20 won 75% return per $ +27.5% (+/- 33.4%) not proven
+favourite + our model at least 10 pts above price: n=12 won 67% return per $ +10.0% (+/- 46.1%) not proven

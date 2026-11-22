@@ -1,0 +1,76 @@
+
+===== eve_6pm: 604 favourites priced 50-65c (halves split at 2026-07-11) =====
+-- fill rule: touch
+  pay the ask            filled 100%  n=604  return  +3.7% ± 3.4%   profit per 100 chances $ +2.22 (per $1 contract)
+  limit 1c under         filled  99%  n=600  return  +6.9% ± 3.6%   profit per 100 chances $ +3.93 (per $1 contract)
+      halves: +5.4% / +8.1%
+  limit 2c under         filled  98%  n=592  return  +7.8% ± 3.6%   profit per 100 chances $ +4.31 (per $1 contract)
+      halves: +6.0% / +9.3%
+  limit 3c under         filled  96%  n=580  return  +8.2% ± 3.8%   profit per 100 chances $ +4.38 (per $1 contract)
+      halves: +5.8% / +10.2%
+  limit 4c under         filled  93%  n=564  return  +8.1% ± 3.9%   profit per 100 chances $ +4.13 (per $1 contract)
+      halves: +6.1% / +9.8%
+  limit 5c under         filled  91%  n=548  return  +7.9% ± 4.1%   profit per 100 chances $ +3.82 (per $1 contract)
+      halves: +5.4% / +9.9%
+  limit 6c under         filled  88%  n=533  return  +7.4% ± 4.2%   profit per 100 chances $ +3.48 (per $1 contract)
+      halves: +5.1% / +9.3%
+-- fill rule: through
+  pay the ask            filled 100%  n=604  return  +3.7% ± 3.4%   profit per 100 chances $ +2.22 (per $1 contract)
+  limit 1c under         filled  98%  n=592  return  +5.9% ± 3.6%   profit per 100 chances $ +3.33 (per $1 contract)
+      halves: +4.1% / +7.4%
+  limit 2c under         filled  96%  n=580  return  +6.3% ± 3.7%   profit per 100 chances $ +3.42 (per $1 contract)
+      halves: +3.9% / +8.2%
+  limit 3c under         filled  93%  n=564  return  +6.1% ± 3.8%   profit per 100 chances $ +3.20 (per $1 contract)
+      halves: +4.2% / +7.8%
+  limit 4c under         filled  91%  n=548  return  +5.9% ± 4.0%   profit per 100 chances $ +2.91 (per $1 contract)
+      halves: +3.4% / +7.8%
+  limit 5c under         filled  88%  n=533  return  +5.4% ± 4.1%   profit per 100 chances $ +2.60 (per $1 contract)
+      halves: +3.1% / +7.2%
+  limit 6c under         filled  85%  n=512  return  +3.6% ± 4.3%   profit per 100 chances $ +1.75 (per $1 contract)
+      halves: -0.5% / +7.0%
+-- by city, limit 3c, touch rule (n is small: read as a hint only)
+  KXHIGHAUS              filled  95%  n=80   return  -1.1% ± 10.4%   profit per 100 chances $ -0.77 (per $1 contract)
+  KXHIGHCHI              filled 100%  n=36   return  +3.5% ± 15.7%   profit per 100 chances $ +1.69 (per $1 contract)
+  KXHIGHDEN              filled  94%  n=50   return +10.5% ± 13.0%   profit per 100 chances $ +5.21 (per $1 contract)
+  KXHIGHLAX              filled  95%  n=99   return  +6.0% ± 9.1%   profit per 100 chances $ +3.34 (per $1 contract)
+  KXHIGHMIA              filled  97%  n=168  return +11.2% ± 6.9%   profit per 100 chances $ +6.18 (per $1 contract)
+  KXHIGHNY               filled  98%  n=86   return +12.8% ± 10.0%   profit per 100 chances $ +6.51 (per $1 contract)
+  KXHIGHPHIL             filled  94%  n=61   return +10.3% ± 11.6%   profit per 100 chances $ +5.86 (per $1 contract)
+
+===== morn_7am: 962 favourites priced 50-65c (halves split at 2026-07-11) =====
+-- fill rule: touch
+  pay the ask            filled 100%  n=962  return  +4.0% ± 2.7%   profit per 100 chances $ +2.37 (per $1 contract)
+  limit 1c under         filled  99%  n=950  return  +6.8% ± 2.8%   profit per 100 chances $ +3.85 (per $1 contract)
+      halves: +5.9% / +7.8%
+  limit 2c under         filled  97%  n=933  return  +7.4% ± 2.9%   profit per 100 chances $ +4.06 (per $1 contract)
+      halves: +6.8% / +8.2%
+  limit 3c under         filled  95%  n=915  return  +7.9% ± 2.9%   profit per 100 chances $ +4.18 (per $1 contract)
+      halves: +7.4% / +8.5%
+  limit 4c under         filled  93%  n=896  return  +8.3% ± 3.0%   profit per 100 chances $ +4.22 (per $1 contract)
+      halves: +7.6% / +9.1%
+  limit 5c under         filled  91%  n=871  return  +8.2% ± 3.2%   profit per 100 chances $ +3.96 (per $1 contract)
+      halves: +7.2% / +9.2%
+  limit 6c under         filled  88%  n=851  return  +8.3% ± 3.3%   profit per 100 chances $ +3.87 (per $1 contract)
+      halves: +6.9% / +9.8%
+-- fill rule: through
+  pay the ask            filled 100%  n=962  return  +4.0% ± 2.7%   profit per 100 chances $ +2.37 (per $1 contract)
+  limit 1c under         filled  97%  n=933  return  +5.5% ± 2.8%   profit per 100 chances $ +3.09 (per $1 contract)
+      halves: +4.9% / +6.3%
+  limit 2c under         filled  95%  n=915  return  +6.0% ± 2.9%   profit per 100 chances $ +3.23 (per $1 contract)
+      halves: +5.4% / +6.6%
+  limit 3c under         filled  93%  n=896  return  +6.3% ± 3.0%   profit per 100 chances $ +3.29 (per $1 contract)
+      halves: +5.6% / +7.1%
+  limit 4c under         filled  91%  n=871  return  +6.2% ± 3.1%   profit per 100 chances $ +3.06 (per $1 contract)
+      halves: +5.2% / +7.2%
+  limit 5c under         filled  88%  n=851  return  +6.2% ± 3.2%   profit per 100 chances $ +2.99 (per $1 contract)
+      halves: +4.9% / +7.7%
+  limit 6c under         filled  85%  n=818  return  +4.9% ± 3.3%   profit per 100 chances $ +2.25 (per $1 contract)
+      halves: +3.5% / +6.5%
+-- by city, limit 3c, touch rule (n is small: read as a hint only)
+  KXHIGHAUS              filled  97%  n=122  return +12.7% ± 7.9%   profit per 100 chances $ +6.93 (per $1 contract)
+  KXHIGHCHI              filled  94%  n=102  return -11.1% ± 9.2%   profit per 100 chances $ -5.95 (per $1 contract)
+  KXHIGHDEN              filled  95%  n=95   return  +6.6% ± 9.2%   profit per 100 chances $ +3.29 (per $1 contract)
+  KXHIGHLAX              filled  96%  n=139  return +20.1% ± 7.2%   profit per 100 chances $+10.89 (per $1 contract)
+  KXHIGHMIA              filled  93%  n=186  return  +4.0% ± 6.4%   profit per 100 chances $ +2.27 (per $1 contract)
+  KXHIGHNY               filled  96%  n=153  return +11.3% ± 7.3%   profit per 100 chances $ +5.63 (per $1 contract)
+  KXHIGHPHIL             filled  96%  n=118  return  +7.8% ± 8.3%   profit per 100 chances $ +4.38 (per $1 contract)

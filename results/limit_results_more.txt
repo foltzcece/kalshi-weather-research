@@ -1,0 +1,10 @@
+
+=== eve_6pm: 428 past favourites priced 50-65c ===
+  pay the ask:        all 428 filled, return -6.3%
+  limit 2c under ask: filled 417/428 (97%), won 55%, return -3.4%  (same trades paying the ask: -8.3%)
+  limit 3c under ask: filled 409/428 (96%), won 54%, return -3.3%  (same trades paying the ask: -9.8%)
+
+=== morn_7am: 470 past favourites priced 50-65c ===
+  pay the ask:        all 470 filled, return -7.5%
+  limit 2c under ask: filled 454/470 (97%), won 55%, return -5.2%  (same trades paying the ask: -9.9%)
+  limit 3c under ask: filled 446/470 (95%), won 54%, return -5.0%  (same trades paying the ask: -11.3%)

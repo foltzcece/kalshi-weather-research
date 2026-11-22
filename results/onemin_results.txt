@@ -1,0 +1,33 @@
+377 city-days with full 1-minute data and a Kalshi settlement
+
+Settle gap (Kalshi value minus 1-minute max):
+  ALL        mean -0.43  sd 0.79   -1F:40%  +0F:58%
+  NY         mean -0.37  sd 0.77   -5F:2%  -1F:30%  +0F:67%  +1F:2%  (n=60)
+  CHI        mean -0.31  sd 0.46   -1F:31%  +0F:69%  (n=65)
+  MIA        mean -0.34  sd 0.61   -1F:40%  +0F:57%  +1F:2%  +2F:2%  (n=53)
+  AUS        mean -0.55  sd 0.50   -1F:55%  +0F:45%  (n=33)
+  DEN        mean -0.44  sd 0.53   -1F:46%  +0F:52%  +1F:2%  (n=63)
+  LAX        mean -0.49  sd 0.93   -1F:59%  +0F:39%  +5F:2%  (n=49)
+  PHIL       mean -0.59  sd 1.31   -6F:4%  -5F:2%  -1F:28%  +0F:67%  (n=54)
+
+Coarse gap (Kalshi value minus what the free whole-degC 5-minute feed shows):
+  ALL        mean -0.15  sd 0.87   -2F:3%  -1F:29%  +0F:46%  +1F:20%  +2F:1%
+  NY         mean -0.16  sd 0.88   -5F:2%  -2F:2%  -1F:28%  +0F:52%  +1F:15%  +2F:2%  (n=60)
+  CHI        mean -0.10  sd 0.63   -2F:2%  -1F:26%  +0F:52%  +1F:20%  (n=65)
+  MIA        mean +0.02  sd 0.72   -2F:4%  -1F:21%  +0F:49%  +1F:25%  +2F:2%  (n=53)
+  AUS        mean -0.47  sd 0.64   -2F:6%  -1F:48%  +0F:33%  +1F:12%  (n=33)
+  DEN        mean -0.17  sd 0.72   -2F:3%  -1F:27%  +0F:49%  +1F:19%  +2F:2%  (n=63)
+  LAX        mean -0.05  sd 1.11   -2F:6%  -1F:27%  +0F:43%  +1F:22%  +5F:2%  (n=49)
+  PHIL       mean -0.20  sd 1.15   -7F:2%  -2F:2%  -1F:31%  +0F:35%  +1F:26%  +2F:4%  (n=54)
+
+Final settled value given the whole-degC feed's max (end of day), actual vs live model:
+  reading ends in .0F (n=29): actual -1:21%  +0:72%  +1:3%  +2:3%
+                          model  -1:10%  +0:54%  +1:35%  +2:0%
+  reading ends in .2F (n=89): actual -1:10%  +0:49%  +1:39%  +2:1%
+                          model  -1:3%  +0:50%  +1:45%  +2:1%
+  reading ends in .4F (n=87): actual -1:15%  +0:41%  +1:41%  +2:2%
+                          model  +0:42%  +1:53%  +2:5%
+  reading ends in .6F (n=81): actual -2:9%  -1:41%  +0:46%  +1:2%
+                          model  -1:32%  +0:55%  +1:13%  +2:0%
+  reading ends in .8F (n=91): actual -2:5%  -1:52%  +0:38%  +1:2%  +2:1%
+                          model  -1:20%  +0:55%  +1:25%  +2:0%

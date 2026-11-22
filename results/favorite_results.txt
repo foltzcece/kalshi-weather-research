@@ -1,0 +1,52 @@
+
+=== eve_6pm, favourite priced 50%-65% ===
+  all          n=605  won  61%  return per $  +3.8%  (+/- 6.7%)  not proven
+  winter       n=77   won  61%  return per $  +6.2%  (+/- 19.2%)  not proven
+  spring       n=92   won  60%  return per $  +1.5%  (+/- 17.2%)  not proven
+  summer       n=202  won  59%  return per $  +1.3%  (+/- 11.6%)  not proven
+  fall         n=234  won  62%  return per $  +6.1%  (+/- 10.6%)  not proven
+  older half   n=302  won  59%  return per $  +0.3%  (+/- 9.6%)  not proven   (2025-11-20 to 2026-07-26)
+  newer half   n=303  won  63%  return per $  +7.3%  (+/- 9.3%)  not proven   (2026-07-26 to 2026-11-19)
+  last 60 days n=174  won  66%  return per $ +11.9%  (+/- 12.0%)  not proven
+  KXHIGHAUS    n=84   won  56%  return per $  -3.7%  (+/- 18.5%)  not proven
+  KXHIGHCHI    n=36   won  56%  return per $  -3.7%  (+/- 28.7%)  not proven
+  KXHIGHDEN    n=53   won  62%  return per $  +6.5%  (+/- 22.7%)  not proven
+  KXHIGHLAX    n=104  won  61%  return per $  +2.8%  (+/- 16.1%)  not proven
+  KXHIGHMIA    n=174  won  63%  return per $  +6.0%  (+/- 12.3%)  not proven
+  KXHIGHNY     n=89   won  62%  return per $  +6.8%  (+/- 17.7%)  not proven
+  KXHIGHPHIL   n=65   won  63%  return per $  +7.0%  (+/- 20.2%)  not proven
+
+=== eve_6pm, favourite priced 45%-70% ===
+  all          n=1136 won  57%  return per $  +2.6%  (+/- 5.2%)  not proven
+
+=== eve_6pm, favourite priced 40%-50% ===
+  all          n=969  won  49%  return per $  +2.6%  (+/- 6.6%)  not proven
+
+=== eve_6pm, favourite priced 65%-80% ===
+  all          n=130  won  72%  return per $  -1.2%  (+/- 10.6%)  not proven
+
+=== morn_7am, favourite priced 50%-65% ===
+  all          n=963  won  62%  return per $  +4.1%  (+/- 5.2%)  not proven
+  winter       n=145  won  66%  return per $ +11.4%  (+/- 13.3%)  not proven
+  spring       n=188  won  63%  return per $  +7.4%  (+/- 11.8%)  not proven
+  summer       n=329  won  59%  return per $  -0.6%  (+/- 9.0%)  not proven
+  fall         n=301  won  62%  return per $  +3.7%  (+/- 9.2%)  not proven
+  older half   n=481  won  62%  return per $  +4.3%  (+/- 7.4%)  not proven   (2025-11-20 to 2026-07-04)
+  newer half   n=482  won  62%  return per $  +3.8%  (+/- 7.3%)  not proven   (2026-07-05 to 2026-11-19)
+  last 60 days n=189  won  63%  return per $  +3.7%  (+/- 11.4%)  not proven
+  KXHIGHAUS    n=126  won  64%  return per $  +7.1%  (+/- 14.1%)  not proven
+  KXHIGHCHI    n=109  won  51%  return per $ -11.8%  (+/- 16.2%)  not proven
+  KXHIGHDEN    n=100  won  61%  return per $  +3.4%  (+/- 16.4%)  not proven
+  KXHIGHLAX    n=145  won  68%  return per $ +14.6%  (+/- 12.8%)  LIKELY REAL
+  KXHIGHMIA    n=199  won  62%  return per $  +1.7%  (+/- 11.2%)  not proven
+  KXHIGHNY     n=161  won  63%  return per $  +7.1%  (+/- 12.9%)  not proven
+  KXHIGHPHIL   n=123  won  61%  return per $  +3.3%  (+/- 14.8%)  not proven
+
+=== morn_7am, favourite priced 45%-70% ===
+  all          n=1562 won  59%  return per $  +2.8%  (+/- 4.3%)  not proven
+
+=== morn_7am, favourite priced 40%-50% ===
+  all          n=851  won  48%  return per $  -1.0%  (+/- 7.0%)  not proven
+
+=== morn_7am, favourite priced 65%-80% ===
+  all          n=239  won  69%  return per $  -6.2%  (+/- 8.1%)  not proven

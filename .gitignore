@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.csv
+!gis/rain_gauges.csv
+*.json
+*.log
+onemin/
+.env
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/

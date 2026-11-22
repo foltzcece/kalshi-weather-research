@@ -1,0 +1,43 @@
+
+===== Snapshot eve_6pm: 15297 market-prices, 2551 city-days =====
+mid price band     n  happened       95% range    buy YES return  buy NO return
+  0%-5%        5378        1%      1% to 1%              -73.7%          -0.2%
+  5%-10%       1983        6%      5% to 7%              -34.3%          -0.8%
+ 10%-20%       2351       13%     12% to 15%             -20.2%          -1.0%
+ 20%-35%       2884       26%     24% to 27%             -14.5%          -2.1%
+ 35%-50%       1937       43%     41% to 45%              -3.1%          -7.5%
+ 50%-65%        605       61%     57% to 65%               3.9%         -17.0%
+ 65%-80%        130       72%     64% to 79%              -0.9%         -15.6%
+ 80%-90%         23       91%     73% to 98%               6.1%         -52.6%
+ 90%-95%          6      100%     61% to 100%              5.8%        -100.0%
+
+Market favourite bucket hit rate by city:
+  KXHIGHAUS    favourite won 177/364  (market expected 166.6)
+  KXHIGHCHI    favourite won 166/365  (market expected 150.6)
+  KXHIGHDEN    favourite won 166/364  (market expected 151.9)
+  KXHIGHLAX    favourite won 187/364  (market expected 178.0)
+  KXHIGHMIA    favourite won 203/365  (market expected 189.4)
+  KXHIGHNY     favourite won 185/365  (market expected 175.6)
+  KXHIGHPHIL   favourite won 173/364  (market expected 157.7)
+
+===== Snapshot morn_7am: 15304 market-prices, 2551 city-days =====
+mid price band     n  happened       95% range    buy YES return  buy NO return
+  0%-5%        6834        1%      1% to 1%              -73.9%          -0.5%
+  5%-10%       1525        6%      4% to 7%              -38.6%          -0.3%
+ 10%-20%       1760       13%     12% to 15%             -19.5%          -1.3%
+ 20%-35%       2067       26%     24% to 28%             -15.5%          -1.9%
+ 35%-50%       1760       42%     39% to 44%              -6.9%          -5.1%
+ 50%-65%        963       62%     59% to 65%               4.1%         -18.1%
+ 65%-80%        239       69%     62% to 74%              -6.1%          -4.8%
+ 80%-90%         58       90%     79% to 95%               2.5%         -41.9%
+ 90%-95%         37       92%     79% to 97%              -2.5%         -15.3%
+ 95%-100%        61      100%     94% to 100%              1.1%        -100.0%
+
+Market favourite bucket hit rate by city:
+  KXHIGHAUS    favourite won 205/364  (market expected 190.0)
+  KXHIGHCHI    favourite won 187/365  (market expected 191.9)
+  KXHIGHDEN    favourite won 193/364  (market expected 180.6)
+  KXHIGHLAX    favourite won 214/364  (market expected 194.5)
+  KXHIGHMIA    favourite won 207/365  (market expected 203.4)
+  KXHIGHNY     favourite won 223/365  (market expected 208.1)
+  KXHIGHPHIL   favourite won 204/364  (market expected 191.8)

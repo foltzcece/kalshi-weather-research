@@ -1,0 +1,37 @@
+market_code,city,cli,station,station_name,lat,lon
+WPB,West Palm Beach,CLIDJT,KDJT,President Donald J. Trump International Airport,26.6851,-80.09919
+TTN,Trenton,CLITTN,KTTN,Trenton-Mercer Airport,40.27639,-74.81639
+TPA,Tampa,CLITPA,KTPA,"Tampa, Tampa International Airport",27.96139,-82.54028
+STL,St. Louis,CLISTL,KSTL,St. Louis Lambert International Airport,38.7525,-90.37361
+SGF,Springfield,CLISGF,KSGF,Springfield-Branson National Airport,37.23972,-93.38972
+SFO,San Francisco,CLISFO,KSFO,"San Francisco, San Francisco International Airport",37.61961,-122.36558
+SEA,Seattle,CLISEA,KSEA,"Seattle, Seattle-Tacoma International Airport",47.44472,-122.31361
+SDF,Louisville,CLISDF,KSDF,Louisville Muhammad Ali International Airport,38.17406,-85.7365
+SATX,San Antonio,CLISAT,KSAT,"San Antonio, San Antonio International Airport",29.53278,-98.46361
+SAN,San Diego,CLISAN,KSAN,San Diego International Airport,32.73361,-117.18306
+PVD,Providence,CLIPVD,KPVD,Rhode Island TF Green International Airport,41.72233,-71.42772
+PIT,Pittsburgh,CLIPIT,KPIT,Pittsburgh International Airport,40.4846,-80.21447
+PHIL,Philadelphia,CLIPHL,KPHL,"Philadelphia, Philadelphia International Airport",39.87327,-75.22678
+OKC,Oklahoma City,CLIOKC,KOKC,"Oklahoma City, Will Rogers World Airport",35.38861,-97.60028
+NYC,New York City,CLINYC,KNYC,"New York City, Central Park",40.78333,-73.96667
+NOLA,New Orleans,CLIMSY,KMSY,"New Orleans, New Orleans International Airport",29.99278,-90.25083
+MKE,Milwaukee,CLIMKE,KMKE,"Milwaukee, General Mitchell International Airport",42.955,-87.90444
+MIN,Minneapolis,CLIMSP,KMSP,"Minneapolis, Minneapolis-St. Paul International Airport",44.88306,-93.22889
+MIA,Miami,CLIMIA,KMIA,"Miami, Miami International Airport",25.79056,-80.31639
+LV,Las Vegas,CLILAS,KLAS,Harry Reid International Airport,36.07188,-115.1634
+LEX,Lexington,CLILEX,KLEX,Lexington Blue Grass Airport,38.0339,-84.61146
+LAX,Los Angeles,CLILAX,KLAX,"Los Angeles, Los Angeles International Airport",33.93806,-118.38889
+IND,Indianapolis,CLIIND,KIND,Indianapolis International Airport,39.72518,-86.2816
+HOU,Houston,CLIHOU,KHOU,"Houston, Houston Hobby Airport",29.6375,-95.2825
+EWR,Newark,CLIEWR,KEWR,"Newark, Newark International Airport",40.6825,-74.16944
+DTW,Detroit,CLIDTW,KDTW,"Detroit, Detroit Metropolitan Wayne County Airport",42.23139,-83.33083
+DEN,Denver,CLIDEN,KDEN,"Denver, Denver International Airport",39.84658,-104.65622
+DC,Washington DC,CLIDCA,KDCA,"Washington/Reagan National Airport, DC",38.84833,-77.03417
+DAL,Dallas,CLIDFW,KDFW,Dallas/Fort Worth International Airport,32.89743,-97.02196
+CMH,Columbus,CLICMH,KCMH,John Glenn Columbus International Airport,39.9907,-82.87691
+CLL,College Station,CLICLL,KCLL,"College Station, Easterwood Field",30.58222,-96.36167
+CHI,Chicago,CLIORD,KORD,"Chicago, Chicago-O'Hare International Airport",41.97972,-87.90444
+BOS,Boston,CLIBOS,KBOS,"Boston, Logan International Airport",42.36056,-71.01056
+AUS,Austin,CLIAUS,KAUS,Austin-Bergstrom International Airport,30.18304,-97.67987
+ATL,Atlanta,CLIATL,KATL,"Atlanta, Hartsfield - Jackson Atlanta International Airport",33.64028,-84.42694
+ABQ,Albuquerque,CLIABQ,KABQ,"Albuquerque, Albuquerque International Airport",35.04167,-106.61472

@@ -1,0 +1,75 @@
+Lead strategy: favourite 50-65c, limit min(ask-3c, bid), strict fills, maker fee 0.
+
+A. 7 cities, untouched year (Dec 2024-Nov 2025)
+  eve_6pm: lead strategy                       chances  384  filled  357  return  +4.9%  95% range [ -5.7%, +14.9%]  chance it's really <=0:  17%
+  morn_7am: lead strategy                      chances  717  filled  634  return  +0.6%  95% range [ -6.9%,  +8.1%]  chance it's really <=0:  45%
+  both runs: lead strategy                     chances 1101  filled  991  return  +2.1%  95% range [ -5.0%,  +9.3%]  chance it's really <=0:  27%
+  both runs: limit ask-3c only (old rule)      chances 1101  filled 1028  return  -0.0%  95% range [ -6.3%,  +6.5%]  chance it's really <=0:  48%
+  both runs: lead, 'touch' fills (optimistic)  chances 1101  filled 1023  return  +5.0%  95% range [ -2.2%, +12.0%]  chance it's really <=0:   8%
+  both runs: lead, stress maker fee 1.75%      chances 1101  filled  991  return  +0.2%  95% range [ -6.9%,  +7.1%]  chance it's really <=0:  48%
+  both runs: pay the ask + taker fee           chances 1101  filled 1101  return  -3.4%  95% range [ -9.0%,  +2.3%]  chance it's really <=0:  88%
+
+B. 7 cities, tuning year (Nov 2025-Nov 2026)
+  eve_6pm: lead strategy                       chances  605  filled  563  return  +8.5%  95% range [ +0.6%, +16.5%]  chance it's really <=0:   2%
+  morn_7am: lead strategy                      chances  963  filled  891  return  +8.5%  95% range [ +2.5%, +14.7%]  chance it's really <=0:   1%
+  both runs: lead strategy                     chances 1568  filled 1454  return  +8.5%  95% range [ +2.8%, +14.0%]  chance it's really <=0:   0%
+  both runs: limit ask-3c only (old rule)      chances 1568  filled 1462  return  +8.4%  95% range [ +2.8%, +14.1%]  chance it's really <=0:   0%
+  both runs: lead, 'touch' fills (optimistic)  chances 1568  filled 1493  return +10.5%  95% range [ +5.0%, +16.1%]  chance it's really <=0:   0%
+  both runs: lead, stress maker fee 1.75%      chances 1568  filled 1454  return  +6.5%  95% range [ +1.0%, +11.7%]  chance it's really <=0:   1%
+  both runs: pay the ask + taker fee           chances 1568  filled 1568  return  +4.0%  95% range [ -0.8%,  +8.8%]  chance it's really <=0:   6%
+
+C. 11 newer cities, high temp only (Aug-Nov 2026)
+  eve_6pm: lead strategy                       chances  364  filled  340  return  +2.6%  95% range [ -7.2%, +12.0%]  chance it's really <=0:  31%
+  morn_7am: lead strategy                      chances  420  filled  385  return  -4.4%  95% range [-13.7%,  +4.6%]  chance it's really <=0:  83%
+  both runs: lead strategy                     chances  784  filled  725  return  -1.2%  95% range [ -9.8%,  +6.8%]  chance it's really <=0:  62%
+  both runs: limit ask-3c only (old rule)      chances  784  filled  729  return  -1.2%  95% range [ -9.1%,  +6.4%]  chance it's really <=0:  62%
+  both runs: lead, 'touch' fills (optimistic)  chances  784  filled  740  return  +0.6%  95% range [ -7.2%,  +8.6%]  chance it's really <=0:  43%
+  both runs: lead, stress maker fee 1.75%      chances  784  filled  725  return  -2.9%  95% range [-10.6%,  +4.8%]  chance it's really <=0:  77%
+  both runs: pay the ask + taker fee           chances  784  filled  784  return  -4.1%  95% range [-11.1%,  +2.8%]  chance it's really <=0:  88%
+
+Same window, Aug 23-Nov 19 2026: is the extra-city loss about cities or about the period?
+  7 tuned cities, same window                  chances  552  filled  511  return  +9.4%  95% range [ -0.0%, +19.0%]  chance it's really <=0:   3%
+  11 newer cities, same window                 chances  784  filled  725  return  -1.2%  95% range [ -9.1%,  +6.6%]  chance it's really <=0:  61%
+
+By quarter, 7 cities, both runs (A then B)
+  2024-Q4                                      chances   82  filled   76  return  +5.0%  95% range [-24.4%, +33.5%]  chance it's really <=0:  38%
+  2025-Q1                                      chances  200  filled  170  return  -1.0%  95% range [-16.5%, +14.4%]  chance it's really <=0:  54%
+  2025-Q2                                      chances  215  filled  190  return  +3.8%  95% range [-11.3%, +20.1%]  chance it's really <=0:  27%
+  2025-Q3                                      chances  399  filled  369  return  -1.3%  95% range [-13.2%, +12.7%]  chance it's really <=0:  56%
+  2025-Q4                                      chances  325  filled  295  return  +9.8%  95% range [ -0.9%, +21.6%]  chance it's really <=0:   4%
+  2026-Q1                                      chances  215  filled  192  return +14.3%  95% range [ -3.2%, +30.4%]  chance it's really <=0:   5%
+  2026-Q2                                      chances  376  filled  355  return  +6.0%  95% range [ -6.2%, +16.2%]  chance it's really <=0:  18%
+  2026-Q3                                      chances  536  filled  505  return  +4.2%  95% range [ -4.9%, +13.7%]  chance it's really <=0:  19%
+  2026-Q4                                      chances  321  filled  293  return +13.9%  95% range [ +2.0%, +26.9%]  chance it's really <=0:   1%
+
+By city (A + B, both runs)
+  KXHIGHAUS                                    chances  357  filled  335  return  +8.5%  95% range [ -2.2%, +19.8%]  chance it's really <=0:   5%
+  KXHIGHCHI                                    chances  256  filled  232  return  -5.3%  95% range [-17.9%,  +8.2%]  chance it's really <=0:  78%
+  KXHIGHDEN                                    chances  225  filled  204  return  +5.3%  95% range [ -8.0%, +18.6%]  chance it's really <=0:  28%
+  KXHIGHLAX                                    chances  391  filled  364  return +11.8%  95% range [ +1.0%, +22.3%]  chance it's really <=0:   1%
+  KXHIGHMIA                                    chances  708  filled  637  return  +6.5%  95% range [ -2.1%, +14.6%]  chance it's really <=0:   8%
+  KXHIGHNY                                     chances  459  filled  429  return  +4.7%  95% range [ -5.9%, +15.8%]  chance it's really <=0:  17%
+  KXHIGHPHIL                                   chances  273  filled  244  return  +5.7%  95% range [ -7.0%, +19.8%]  chance it's really <=0:  19%
+By city, newer cities (C)
+  KXHIGHTATL                                   chances   88  filled   85  return -13.4%  95% range [-34.9%,  +7.5%]  chance it's really <=0:  87%
+  KXHIGHTBOS                                   chances   81  filled   74  return +13.2%  95% range [-13.5%, +37.5%]  chance it's really <=0:  16%
+  KXHIGHTDAL                                   chances   77  filled   68  return  -3.9%  95% range [-26.7%, +20.6%]  chance it's really <=0:  63%
+  KXHIGHTDC                                    chances   67  filled   63  return  -5.1%  95% range [-27.4%, +15.0%]  chance it's really <=0:  68%
+  KXHIGHTHOU                                   chances   79  filled   67  return +12.5%  95% range [-11.6%, +35.7%]  chance it's really <=0:  19%
+  KXHIGHTLV                                    chances   86  filled   77  return  -3.1%  95% range [-24.2%, +18.6%]  chance it's really <=0:  60%
+  KXHIGHTMIN                                   chances   50  filled   44  return +19.4%  95% range [-11.5%, +46.3%]  chance it's really <=0:  10%
+  KXHIGHTOKC                                   chances   68  filled   66  return  -8.1%  95% range [-32.3%, +17.3%]  chance it's really <=0:  73%
+  KXHIGHTPHX                                   chances   69  filled   67  return  -2.7%  95% range [-30.1%, +24.4%]  chance it's really <=0:  55%
+  KXHIGHTSEA                                   chances   75  filled   71  return  -0.3%  95% range [-25.9%, +24.1%]  chance it's really <=0:  49%
+  KXHIGHTSFO                                   chances   44  filled   43  return -17.8%  95% range [-52.1%, +12.5%]  chance it's really <=0:  86%
+
+Price band check on untouched year A (was 50-65c chosen by luck?)
+  band 35%-45%                                 chances 1124  filled 1034  return  -5.7%  95% range [-14.5%,  +2.4%]  chance it's really <=0:  92%
+  band 40%-50%                                 chances 2004  filled 1831  return  -5.8%  95% range [-11.8%,  +0.5%]  chance it's really <=0:  96%
+  band 45%-55%                                 chances 1463  filled 1324  return  -0.1%  95% range [ -5.8%,  +6.1%]  chance it's really <=0:  47%
+  band 50%-65%                                 chances 1101  filled  991  return  +2.1%  95% range [ -5.4%,  +9.5%]  chance it's really <=0:  28%
+  band 55%-70%                                 chances  608  filled  539  return  -1.2%  95% range [ -9.7%,  +7.2%]  chance it's really <=0:  59%
+  band 65%-80%                                 chances  179  filled  147  return +13.9%  95% range [ +0.4%, +26.5%]  chance it's really <=0:   2%
+  Untouched data pooled (A + C)                chances 1885  filled 1716  return  +0.7%  95% range [ -4.6%,  +5.8%]  chance it's really <=0:  40%
+  Untouched pooled, touch fills                chances 1885  filled 1763  return  +3.1%  95% range [ -1.9%,  +8.4%]  chance it's really <=0:  11%
+  Untouched pooled, pay ask                    chances 1885  filled 1885  return  -3.7%  95% range [ -8.1%,  +0.7%]  chance it's really <=0:  95%

@@ -10,9 +10,12 @@ import numpy as np
 from PIL import Image
 from picks import get
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "radar_features.csv")
+SET = os.environ.get("RAIN_SET", "")            # "" = Aug-Nov (history_more.csv); "summer" = Jun-Aug
+SFX = f"_{SET}" if SET else ""
+SRC = "history_summer.csv" if SET == "summer" else "history_more.csv"
+OUT = os.path.join(HERE, f"radar_features{SFX}.csv")
 gauges = {r["market_code"]: (float(r["lat"]), float(r["lon"])) for r in csv.DictReader(open(os.path.join(HERE, "gis", "rain_gauges.csv")))}
-rows = [r for r in csv.DictReader(open(os.path.join(HERE, "history_more.csv"))) if r["series"] == "KXRAIN" and r["snap"] == "morn_7am"]
+rows = [r for r in csv.DictReader(open(os.path.join(HERE, SRC))) if r["series"] == "KXRAIN" and r["snap"] == "morn_7am" and (SET != "summer" or r["date"] <= "2026-08-22")]
 days = {}
 for r in rows:
     mid = (float(r["yes_bid"]) + float(r["yes_ask"])) / 2

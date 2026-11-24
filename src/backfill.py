@@ -36,6 +36,7 @@ def main(days, series_list=None):
         rows = list(csv.DictReader(open(OUT)))
         done = {(r["ticker"], r["snap"]) for r in rows}
     cutoff = dt.date.today() - dt.timedelta(days=days)
+    END_DATE = dt.date.fromisoformat(os.environ.get("END_DATE", "2100-01-01"))   # optional: stop at this date
     for series in (series_list or CITIES):
         cursor = ""
         events = []
@@ -43,7 +44,7 @@ def main(days, series_list=None):
             d = get(f"{KALSHI}/events?series_ticker={series}&status=settled&limit=100&with_nested_markets=true" + (f"&cursor={cursor}" if cursor else ""))
             for e in d["events"]:
                 date = dt.datetime.strptime(e["event_ticker"].split("-")[1], "%y%b%d").date()
-                if date >= cutoff:
+                if date >= cutoff and date <= END_DATE:
                     events.append((date, e))
             cursor = d.get("cursor")
             if not cursor or (d["events"] and dt.datetime.strptime(d["events"][-1]["event_ticker"].split("-")[1], "%y%b%d").date() < cutoff):

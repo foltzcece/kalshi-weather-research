@@ -1,0 +1,21 @@
+Paired: 'min(ask-3c, best bid)' minus 'ask-3c', profit per 100 chances [95% range]
+  fav     6 PM: n=   958  +0.06 [-0.26, +0.34]
+  fav     6 PM: cancel noon vs never: n=   958  +0.01 [-0.80, +0.84]
+  fav     7 AM: n=  1369  +0.17 [-0.10, +0.41]
+  fav     7 AM: cancel noon vs never: n=  1369  +0.36 [-0.44, +1.15]
+  generic 6 PM: n= 15143  +0.23 [+0.14, +0.32]
+  generic 6 PM: cancel noon vs never: n= 15143  +0.00 [-0.19, +0.19]
+  generic 7 AM: n= 14274  +0.39 [+0.30, +0.49]
+  generic 7 AM: cancel noon vs never: n= 14274  +0.12 [-0.12, +0.34]
+
+Placement time, fav, all 3 sets pooled, ask-3c through, cancel noon (pay-ask in brackets)
+  noon day before limit              n=  648 traded=  550 filled  85%  return  +9.0% [+1.1%, +15.5%]  profit/100 chances $+4.12
+  noon day before pay ask            n=  648 traded=  648 filled 100%  return  +6.2% [+0.8%, +12.4%]  profit/100 chances $+3.70  median minutes since last trade 10
+  3 PM day before limit              n=  816 traded=  699 filled  86%  return  +7.2% [-0.6%, +13.9%]  profit/100 chances $+3.34
+  3 PM day before pay ask            n=  816 traded=  816 filled 100%  return  +3.9% [-1.8%, +10.8%]  profit/100 chances $+2.31  median minutes since last trade 5
+  6 PM day before limit              n=  958 traded=  836 filled  87%  return  +4.8% [-1.7%, +11.9%]  profit/100 chances $+2.29
+  6 PM day before pay ask            n=  958 traded=  958 filled 100%  return  +0.6% [-4.3%, +6.0%]  profit/100 chances $+0.38  median minutes since last trade 5
+  7 AM limit                         n= 1369 traded= 1162 filled  85%  return  +6.0% [+0.7%, +12.0%]  profit/100 chances $+2.79
+  7 AM pay ask                       n= 1369 traded= 1369 filled 100%  return  +0.4% [-3.6%, +5.5%]  profit/100 chances $+0.26  median minutes since last trade 3
+  11 AM limit                        n= 1560 traded= 1108 filled  71%  return  -2.3% [-7.4%, +2.5%]  profit/100 chances $-0.90
+  11 AM pay ask                      n= 1560 traded= 1560 filled 100%  return  -4.7% [-8.8%, -0.3%]  profit/100 chances $-2.86  median minutes since last trade 1

@@ -11,8 +11,12 @@ import csv, math, os, collections
 import numpy as np
 from picks import kalshi_fee
 HERE = os.path.dirname(os.path.abspath(__file__))
+SET = os.environ.get("RAIN_SET", "")            # "" = Aug-Nov (history_more.csv); "summer" = Jun-Aug
+SFX = f"_{SET}" if SET else ""
+SRC = "history_summer.csv" if SET == "summer" else "history_more.csv"
+
 price, result = {}, {}
-for r in csv.DictReader(open(os.path.join(HERE, "rain_candles.csv"))):
+for r in csv.DictReader(open(os.path.join(HERE, f"rain_candles{SFX}.csv"))):
     try:
         b, a = float(r["bid"]), float(r["ask"])
     except ValueError:
@@ -21,11 +25,11 @@ for r in csv.DictReader(open(os.path.join(HERE, "rain_candles.csv"))):
         price[(r["ticker"], r["hour_utc"])] = (b, a)
     result[r["ticker"]] = 1 if r["result"] == "yes" else 0
 radar = {}
-for r in csv.DictReader(open(os.path.join(HERE, "radar_features.csv"))):
+for r in csv.DictReader(open(os.path.join(HERE, f"radar_features{SFX}.csv"))):
     radar[(r["code"], r["valid"])] = [float(r[k]) for k in ("dbz_2km", "dbz_10km", "dbz_30km", "dbz_60km")]
 eta = {}
-if os.path.exists(os.path.join(HERE, "storm_eta.csv")):
-    for r in csv.DictReader(open(os.path.join(HERE, "storm_eta.csv"))):
+if os.path.exists(os.path.join(HERE, f"storm_eta{SFX}.csv")):
+    for r in csv.DictReader(open(os.path.join(HERE, f"storm_eta{SFX}.csv"))):
         e1, e2 = float(r["eta_any"]), float(r["eta_strong"])
         eta[(r["code"], r["valid"])] = [math.exp(-e1 / 60), math.exp(-e2 / 60), math.log1p(float(r["n_arriving"])), float(r["cell_here"])]
 X, y, meta = [], [], []
@@ -95,7 +99,7 @@ for H in (15, 17, 19, 21):
         L.append(f"    {H - 6:>2}:00 CT  n={s.sum():<4} market {np.mean((p_mkt[s] - y[s]) ** 2):.4f}   market+radar {np.mean((p_rad[s] - y[s]) ** 2):.4f}"
                  + (f"   +ETA {np.mean((p_eta[s] - y[s]) ** 2):.4f}" if eta else ""))
 L.append("\nTrading test (out-of-sample, pay the ask, 1 contract, edge >= 3c after fees, one trade per city-day = first signal):")
-for name, p in (("market+radar", p_rad),) + ((("market+radar+storm ETA", p_eta),) if eta else ()):
+for name, p in (("market recalibrated only", p_cal), ("market+radar", p_rad),) + ((("market+radar+storm ETA", p_eta),) if eta else ()):
     taken, pnl, cost = set(), 0.0, 0.0; n = wins = 0
     for i in np.argsort([m[1] for m in meta], kind="stable"):
         d, H, mid, b, a, tk = meta[i]
@@ -106,7 +110,12 @@ for name, p in (("market+radar", p_rad),) + ((("market+radar+storm ETA", p_eta),
                 pnl += won - c; cost += c; n += 1; wins += won
                 break
     L.append(f"  {name}: {n} trades, won {wins}, return {pnl / cost if cost else 0:+.1%} per $ (P&L {pnl:+.2f})")
+L.append("\nCalibration: average market price vs how often it rained")
+for lo, hi in ((0.03, 0.15), (0.15, 0.3), (0.3, 0.5), (0.5, 0.7), (0.7, 0.97)):
+    s_ = (p_mkt >= lo) & (p_mkt < hi)
+    if s_.sum():
+        L.append(f"  priced {lo:.0%}-{hi:.0%}: n={s_.sum():<4} avg price {p_mkt[s_].mean():.0%}  rained {y[s_].mean():.0%}")
 w = fit(X, y)
 L.append("\nWeights (full data): " + ", ".join(f"{k}={v:+.2f}" for k, v in zip(
     ["const", "logit(price)", "now2", "now10", "now30", "now60", "max2_sofar", "max10_sofar", "rained_2km", "storm_30km", "eta_any", "eta_strong", "n_arriving", "cell_here"], w)))
-open(os.path.join(HERE, "rain_radar_results.txt"), "w").write("\n".join(L) + "\n"); print("\n".join(L))
+open(os.path.join(HERE, f"rain_radar_results{SFX}.txt"), "w").write("\n".join(L) + "\n"); print("\n".join(L))

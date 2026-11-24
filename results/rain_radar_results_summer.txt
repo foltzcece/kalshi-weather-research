@@ -1,0 +1,25 @@
+1312 decision points (398 rain city-days, 34 dates), 20% rained
+
+Out-of-sample accuracy (lower is better):
+  market price            Brier 0.1256  log loss 0.4028
+  market, recalibrated    Brier 0.1075  log loss 0.3526
+  market + radar          Brier 0.1083  log loss 0.3525
+  + storm-motion ETA      Brier 0.1086  log loss 0.3532   (cece's storm-motion idea)
+     9:00 CT  n=390  market 0.1269   market+radar 0.1136   +ETA 0.1134
+    11:00 CT  n=346  market 0.1250   market+radar 0.1120   +ETA 0.1139
+    13:00 CT  n=309  market 0.1226   market+radar 0.1033   +ETA 0.1027
+    15:00 CT  n=267  market 0.1281   market+radar 0.1014   +ETA 0.1014
+
+Trading test (out-of-sample, pay the ask, 1 contract, edge >= 3c after fees, one trade per city-day = first signal):
+  market recalibrated only: 263 trades, won 188, return +10.7% per $ (P&L +18.20)
+  market+radar: 258 trades, won 185, return +10.2% per $ (P&L +17.16)
+  market+radar+storm ETA: 257 trades, won 185, return +10.8% per $ (P&L +18.02)
+
+Calibration: average market price vs how often it rained
+  priced 3%-15%: n=489  avg price 8%  rained 3%
+  priced 15%-30%: n=282  avg price 21%  rained 11%
+  priced 30%-50%: n=223  avg price 39%  rained 16%
+  priced 50%-70%: n=117  avg price 62%  rained 46%
+  priced 70%-97%: n=199  avg price 83%  rained 67%
+
+Weights (full data): const=-0.82, logit(price)=+1.00, now2=-1.06, now10=-0.17, now30=-0.42, now60=-0.08, max2_sofar=+0.95, max10_sofar=-0.65, rained_2km=+0.41, storm_30km=+0.43, eta_any=-0.25, eta_strong=+1.12, n_arriving=+0.08, cell_here=+0.23

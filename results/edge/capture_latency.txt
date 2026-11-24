@@ -1,0 +1,9 @@
+Held-out Dec 2024 - Sep 2026, qc rule, 25% share, max 100 ctr
+  free feed, 20 min after it proves it         buckets  190 on 149 days  staked $  12009  P&L $  2002 (+16.7%, 95% [+12.9%,+21.1%])  losses 3  per active day $13.4
+  free feed, 30 min after it proves it         buckets  142 on 119 days  staked $   8936  P&L $  1666 (+18.6%, 95% [+13.2%,+24.8%])  losses 3  per active day $14.0
+  free feed, 60 min after it proves it         buckets   83 on  67 days  staked $   4837  P&L $   940 (+19.4%, 95% [+10.7%,+29.3%])  losses 3  per active day $14.0
+  free feed, 90 min after it proves it         buckets   49 on  38 days  staked $   2985  P&L $   857 (+28.7%, 95% [+13.9%,+47.6%])  losses 3  per active day $22.6
+  fast feed, 60 min after                      buckets  515 on 325 days  staked $  31340  P&L $ 10648 (+34.0%, 95% [+30.1%,+38.7%])  losses 6  per active day $32.8
+  fast feed, 120 min after                     buckets  196 on 150 days  staked $  11277  P&L $  5095 (+45.2%, 95% [+36.5%,+55.1%])  losses 6  per active day $34.0
+  free feed +10, max 20 ctr                    buckets  242 on 184 days  staked $   3732  P&L $   583 (+15.6%, 95% [+12.1%,+18.9%])  losses 3  per active day $3.2
+  free feed +30, max 20 ctr                    buckets  142 on 119 days  staked $   2138  P&L $   412 (+19.3%, 95% [+13.5%,+25.6%])  losses 3  per active day $3.5

@@ -10,15 +10,17 @@ Files (same folder):
   shadow_log.csv   every side the model scored, so we can check calibration on far more data
 """
 import csv, json, os, sys, datetime as dt, urllib.request
-import picks, picks_v2, live, favorite
+import picks, picks_v2, live, favorite, rainno
 from picks import KALSHI, get
-MODELS = {"v1": picks.evaluate, "v2": picks_v2.evaluate, "live": live.evaluate, "fav": favorite.evaluate}
+MODELS = {"v1": picks.evaluate, "v2": picks_v2.evaluate, "live": live.evaluate, "fav": favorite.evaluate, "rainno": rainno.evaluate, "live_old": live.evaluate_old}
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PAPER = os.path.join(HERE, "paper_picks.csv")          # v1 (kept so its history stays put)
 PAPER_FILES = {"v1": PAPER, "v2": os.path.join(HERE, "paper_picks_v2.csv"),
                "live": os.path.join(HERE, "paper_picks_live.csv"),
-               "fav": os.path.join(HERE, "paper_picks_fav.csv")}
+               "fav": os.path.join(HERE, "paper_picks_fav.csv"),
+               "rainno": os.path.join(HERE, "paper_picks_rainno.csv"),
+               "live_old": os.path.join(HERE, "paper_picks_live_old.csv")}   # old live model, side by side (from 2026-11-22)
 FORECASTS = os.path.join(HERE, "forecast_log.csv")    # each source's forecast vs the actual high
 BIAS = os.path.join(HERE, "bias.json")
 SHADOW = os.path.join(HERE, "shadow_log.csv")
@@ -53,7 +55,21 @@ def market(ticker):
 
 
 LIMIT_OFFSET = 0.03      # suggested limit order: 3 cents under the asking price (best in limit_backtest.py)
-MAKER_FEE_RATE = 0.0175  # resting-order fee (conservative; some markets charge 0)
+MAKER_FEE_RATE = 0.0  # weather series charge no maker fee (fee_type quadratic, maker multiplier 0; Kalshi fee schedule Jul 2026)
+
+
+def limit_price(r):
+    """Suggested limit = the lower of (ask - 3c) and the current best bid on our side
+    (cece approved 2026-11-23): never sit alone inside a wide spread, where we get picked off."""
+    lim = r["price"] - LIMIT_OFFSET
+    try:
+        m = market(r["ticker"])
+        bid = float(m.get("yes_bid_dollars" if r["side"] == "YES" else "no_bid_dollars") or 0)
+        if bid > 0:
+            lim = min(lim, bid)
+    except Exception as e:
+        print(f"! bid lookup {r['ticker']}: {e}", file=sys.stderr)
+    return round(max(0.01, lim), 2)
 
 
 def maker_fee(price, n):
@@ -63,14 +79,16 @@ def maker_fee(price, n):
 
 def limit_filled(r):
     """Would a resting order at r['limit'] have filled before the market closed?
-    Counts any later trade at or better than our limit on our side."""
+    Strict rule (cece approved 2026-11-23, exec/ study): counts only a later trade strictly
+    BETTER than our limit on our side, i.e. the price traded through us, so we were surely
+    reached even if other orders were ahead of ours in line."""
     start = int(dt.datetime.strptime(r["run_time"], "%Y-%m-%d %H:%M UTC").replace(tzinfo=dt.timezone.utc).timestamp())
     lim, cursor = float(r["limit"]), ""
     for _ in range(10):
         d = get(f"{KALSHI}/markets/trades?ticker={r['ticker']}&min_ts={start}&limit=1000" + (f"&cursor={cursor}" if cursor else ""))
         for t in d.get("trades", []):
             px = float(t["yes_price_dollars"] if r["side"] == "YES" else t["no_price_dollars"])
-            if px <= lim:
+            if px < lim - 1e-9:
                 return True
         cursor = d.get("cursor")
         if not cursor:
@@ -147,7 +165,7 @@ def choose(picks_list, paper, bank):
     taken = {p["ticker"].rsplit("-", 1)[0] for p in paper}
     chosen = []
     for r in picks_list:                  # best first; one pick per city-day
-        ev = r["ticker"].rsplit("-", 1)[0]
+        ev = r["ticker"] if r["ticker"].startswith("KXRAIN") else r["ticker"].rsplit("-", 1)[0]   # rain: one event holds every city
         if ev in taken:
             continue
         cost_each = r["price"] + r["fee"]
@@ -156,16 +174,18 @@ def choose(picks_list, paper, bank):
             continue
         taken.add(ev)
         chosen.append(r | {"contracts": n, "cost": round(n * cost_each, 2),
-                           "limit": round(max(0.01, r["price"] - LIMIT_OFFSET), 2)})
+                           "limit": limit_price(r)})
         if len(chosen) == PICKS_PER_RUN:
             break
     return chosen
 
 
-def run(versions=("v1", "v2", "fav")):
+def run(versions=("v1", "v2", "fav", "rainno")):
     settled = settle()
     now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     shadow, fc = read(SHADOW), read(FORECASTS)
+    if "live" in versions and "live_old" not in versions:   # old live model rides on the same fetch
+        versions = tuple(versions) + ("live_old",)
     for version in versions:
         evaluate = MODELS[version]
         bank = bankroll(version)
@@ -296,6 +316,6 @@ def report():
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "report"
     if cmd == "run":
-        run(tuple(sys.argv[2:]) or ("v1", "v2", "fav"))      # e.g. "tracker.py run live"
+        run(tuple(sys.argv[2:]) or ("v1", "v2", "fav", "rainno"))      # e.g. "tracker.py run live"
     else:
         {"settle": settle, "report": report}[cmd]()

@@ -1,0 +1,18 @@
+
+2024-12-01..2025-11-19  (qc rule, stale price 3-50c only, 25% share)
+  fast feed +2 min, max 100 ctr                buckets 1498 on 333 days  staked $  97230  P&L $ 15238 (+15.7%, 95% [+14.7%,+16.6%])  losses 2  per active day $45.8
+  fast feed +2 min, max 20 ctr                 buckets 1498 on 333 days  staked $  23556  P&L $  3872 (+16.4%, 95% [+15.4%,+17.4%])  losses 2  per active day $11.6
+  fast feed +10 min, max 20 ctr                buckets  833 on 296 days  staked $  13278  P&L $  2154 (+16.2%, 95% [+14.9%,+17.6%])  losses 2  per active day $7.3
+  free feed +15 min, max 20 ctr                buckets  128 on  97 days  staked $   2028  P&L $   291 (+14.4%, 95% [+9.7%,+18.7%])  losses 2  per active day $3.0
+
+2025-11-20..2026-09-21  (qc rule, stale price 3-50c only, 25% share)
+  fast feed +2 min, max 100 ctr                buckets 1146 on 283 days  staked $  76745  P&L $ 11438 (+14.9%, 95% [+13.9%,+15.9%])  losses 0  per active day $40.4
+  fast feed +2 min, max 20 ctr                 buckets 1146 on 283 days  staked $  18210  P&L $  2730 (+15.0%, 95% [+13.9%,+16.1%])  losses 0  per active day $9.6
+  fast feed +10 min, max 20 ctr                buckets  605 on 245 days  staked $   9596  P&L $  1486 (+15.5%, 95% [+14.0%,+17.0%])  losses 0  per active day $6.1
+  free feed +15 min, max 20 ctr                buckets   87 on  67 days  staked $   1370  P&L $   177 (+12.9%, 95% [+9.9%,+16.2%])  losses 0  per active day $2.6
+
+2026-09-22..2026-11-19  (qc rule, stale price 3-50c only, 25% share)
+  fast feed +2 min, max 100 ctr                buckets  148 on  51 days  staked $   9430  P&L $  1447 (+15.3%, 95% [+12.8%,+18.0%])  losses 0  per active day $28.4
+  fast feed +2 min, max 20 ctr                 buckets  148 on  51 days  staked $   2230  P&L $   336 (+15.1%, 95% [+12.6%,+18.0%])  losses 0  per active day $6.6
+  fast feed +10 min, max 20 ctr                buckets   95 on  43 days  staked $   1451  P&L $   227 (+15.7%, 95% [+12.6%,+18.8%])  losses 0  per active day $5.3
+  free feed +15 min, max 20 ctr                buckets    9 on   8 days  staked $    131  P&L $    14 (+10.8%, 95% [+3.5%,+20.8%])  losses 0  per active day $1.8

@@ -1,0 +1,60 @@
+Maker markout to settlement, Kalshi weather markets settled 2026-09-22..2026-11-19 (rain = only city-days priced 3-97c at 7 AM) (n=4,332,628 trades)
+± = 95% range, clustered by event-day. Fees: weather series are fee_type 'quadratic' (no maker fee charged);
+'w/ fee' column shows the result if a 0.0175 maker fee applied.
+
+=== HIGH markets ===
+  ALL                    2,455,934 trades  55,559,416 ctr   413 event-days  maker edge +0.53c/ctr  return  +0.8% ± 0.4%
+  ALL w/ 0.0175 fee      2,455,934 trades  55,559,416 ctr   413 event-days  maker edge -0.47c/ctr  return  -0.7% ± 0.4%
+ by local time of trade:
+  day before             474,257 trades   5,679,301 ctr   413 event-days  maker edge +0.76c/ctr  return  +1.3% ± 0.9%
+  00-09h                 663,412 trades   9,849,064 ctr   413 event-days  maker edge +0.95c/ctr  return  +1.5% ± 1.3%
+  09-13h                 801,893 trades  16,719,464 ctr   413 event-days  maker edge +0.20c/ctr  return  +0.3% ± 0.6%
+  13-17h                 448,336 trades  15,024,931 ctr   413 event-days  maker edge +0.52c/ctr  return  +0.7% ± 2.1%
+  17-24h                  66,606 trades   8,093,324 ctr   413 event-days  maker edge +0.52c/ctr  return  +0.6% ± 0.8%
+  after midnight           1,430 trades     193,333 ctr   121 event-days  maker edge +2.20c/ctr  return  +2.4% ± 1.9%
+ by trade price (YES):
+  0.00-0.10              607,964 trades  30,475,392 ctr   413 event-days  maker edge +0.90c/ctr  return  +1.1% ± 0.4%
+  0.10-0.25              495,600 trades   6,728,063 ctr   413 event-days  maker edge +0.17c/ctr  return  +0.3% ± 2.0%
+  0.25-0.50              628,137 trades   6,411,194 ctr   410 event-days  maker edge +0.48c/ctr  return  +0.9% ± 1.9%
+  0.50-0.75              451,230 trades   4,275,582 ctr   413 event-days  maker edge -1.02c/ctr  return  -2.2% ± 3.4%
+  0.75-0.90              140,987 trades   1,796,007 ctr   413 event-days  maker edge -0.53c/ctr  return  -1.3% ± 4.1%
+  0.90-1.01              132,016 trades   5,873,178 ctr   413 event-days  maker edge +0.51c/ctr  return  +0.8% ± 1.8%
+ by maker side:
+  maker bought YES       958,999 trades  16,370,897 ctr   413 event-days  maker edge +0.21c/ctr  return  +0.5% ± 2.9%
+  maker sold YES         1,496,935 trades  39,188,519 ctr   413 event-days  maker edge +0.67c/ctr  return  +0.8% ± 0.6%
+ by trade size:
+  0-10 ctr               1,578,241 trades   4,895,301 ctr   413 event-days  maker edge +0.38c/ctr  return  +0.7% ± 0.6%
+  10-100 ctr             804,462 trades  21,226,262 ctr   413 event-days  maker edge +0.40c/ctr  return  +0.7% ± 0.7%
+  100-1000000000 ctr      73,231 trades  29,437,853 ctr   413 event-days  maker edge +0.65c/ctr  return  +0.8% ± 0.7%
+ first half vs second half (by event date):
+  first half             1,400,523 trades  32,804,124 ctr   203 event-days  maker edge +0.74c/ctr  return  +1.1% ± 0.4%
+  second half            1,055,411 trades  22,755,292 ctr   210 event-days  maker edge +0.23c/ctr  return  +0.3% ± 0.8%
+
+=== RAIN markets ===
+  ALL                    1,876,694 trades  40,851,918 ctr    59 event-days  maker edge +0.51c/ctr  return  +0.9% ± 0.8%
+  ALL w/ 0.0175 fee      1,876,694 trades  40,851,918 ctr    59 event-days  maker edge -0.49c/ctr  return  -0.9% ± 0.8%
+ by local time of trade:
+  day before             213,526 trades   3,199,227 ctr    59 event-days  maker edge +0.95c/ctr  return  +1.8% ± 2.8%
+  00-09h                 398,158 trades   5,391,341 ctr    59 event-days  maker edge +0.14c/ctr  return  +0.3% ± 2.0%
+  09-13h                 301,111 trades   5,816,754 ctr    59 event-days  maker edge +0.67c/ctr  return  +1.3% ± 1.5%
+  13-17h                 392,963 trades   9,369,290 ctr    59 event-days  maker edge +0.19c/ctr  return  +0.3% ± 1.5%
+  17-24h                 569,160 trades  16,955,813 ctr    59 event-days  maker edge +0.67c/ctr  return  +1.1% ± 0.9%
+  after midnight           1,776 trades     119,493 ctr    12 event-days  maker edge +0.92c/ctr  return  +1.5% ± 1.0%
+ by trade price (YES):
+  0.00-0.10              241,690 trades  10,365,394 ctr    57 event-days  maker edge +0.40c/ctr  return  +0.7% ± 0.8%
+  0.10-0.25              381,478 trades   7,084,977 ctr    58 event-days  maker edge +1.21c/ctr  return  +2.2% ± 1.7%
+  0.25-0.50              544,472 trades   7,883,387 ctr    58 event-days  maker edge +0.48c/ctr  return  +0.9% ± 1.7%
+  0.50-0.75              462,506 trades   6,288,468 ctr    57 event-days  maker edge +0.08c/ctr  return  +0.2% ± 2.2%
+  0.75-0.90              159,708 trades   2,775,876 ctr    56 event-days  maker edge +2.06c/ctr  return  +4.4% ± 4.0%
+  0.90-1.01               86,840 trades   6,453,818 ctr    55 event-days  maker edge -0.28c/ctr  return  -0.4% ± 1.4%
+ by maker side:
+  maker bought YES       813,353 trades  19,756,560 ctr    59 event-days  maker edge -3.59c/ctr  return  -7.6% ± 8.1%
+  maker sold YES         1,063,341 trades  21,095,359 ctr    59 event-days  maker edge +4.35c/ctr  return  +6.8% ± 6.1%
+ by trade size:
+  0-10 ctr               1,104,973 trades   3,698,647 ctr    59 event-days  maker edge +1.90c/ctr  return  +3.8% ± 2.0%
+  10-100 ctr             698,418 trades  18,058,872 ctr    59 event-days  maker edge +0.95c/ctr  return  +1.8% ± 1.0%
+  100-1000000000 ctr      73,303 trades  19,094,399 ctr    59 event-days  maker edge -0.17c/ctr  return  -0.3% ± 1.0%
+ first half vs second half (by event date):
+  first half             976,124 trades  20,592,224 ctr    29 event-days  maker edge +0.43c/ctr  return  +0.8% ± 1.4%
+  second half            900,570 trades  20,259,694 ctr    30 event-days  maker edge +0.60c/ctr  return  +1.1% ± 1.0%
+

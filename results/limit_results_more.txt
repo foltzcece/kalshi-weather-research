@@ -1,10 +1,11 @@
+# Re-run 2026-11-23 with maker fee 0. Old: archive/limit_results_more_before_maker_fee_zero.txt
 
-=== eve_6pm: 428 past favourites priced 50-65c ===
-  pay the ask:        all 428 filled, return -6.3%
-  limit 2c under ask: filled 417/428 (97%), won 55%, return -3.4%  (same trades paying the ask: -8.3%)
-  limit 3c under ask: filled 409/428 (96%), won 54%, return -3.3%  (same trades paying the ask: -9.8%)
+=== eve_6pm: 485 past favourites priced 50-65c ===
+  pay the ask:        all 485 filled, return -6.5%
+  limit 2c under ask: filled 472/485 (97%), won 55%, return -2.0%  (same trades paying the ask: -8.6%)
+  limit 3c under ask: filled 463/485 (95%), won 54%, return -1.9%  (same trades paying the ask: -10.1%)
 
-=== morn_7am: 470 past favourites priced 50-65c ===
-  pay the ask:        all 470 filled, return -7.5%
-  limit 2c under ask: filled 454/470 (97%), won 55%, return -5.2%  (same trades paying the ask: -9.9%)
-  limit 3c under ask: filled 446/470 (95%), won 54%, return -5.0%  (same trades paying the ask: -11.3%)
+=== morn_7am: 496 past favourites priced 50-65c ===
+  pay the ask:        all 496 filled, return -8.0%
+  limit 2c under ask: filled 479/496 (97%), won 55%, return -4.1%  (same trades paying the ask: -10.3%)
+  limit 3c under ask: filled 471/496 (95%), won 54%, return -3.8%  (same trades paying the ask: -11.6%)

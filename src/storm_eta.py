@@ -7,10 +7,13 @@ Output: storm_eta.csv (valid, code, eta_any, eta_strong, n_arriving, cell_here).
 """
 import csv, io, math, os, sys, collections, urllib.request, datetime as dt
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "storm_eta.csv")
+SET = os.environ.get("RAIN_SET", "")            # "" = Aug-Nov (history_more.csv); "summer" = Jun-Aug
+SFX = f"_{SET}" if SET else ""
+SRC = "history_summer.csv" if SET == "summer" else "history_more.csv"
+OUT = os.path.join(HERE, f"storm_eta{SFX}.csv")
 gauges = {r["market_code"]: (float(r["lat"]), float(r["lon"])) for r in csv.DictReader(open(os.path.join(HERE, "gis", "rain_gauges.csv")))}
 days = collections.defaultdict(set)
-for r in csv.DictReader(open(os.path.join(HERE, "rain_candles.csv"))):
+for r in csv.DictReader(open(os.path.join(HERE, f"rain_candles{SFX}.csv"))):
     days[r["date"]].add(r["ticker"].split("-")[-1])
 done = {r["valid"][:10] for r in csv.DictReader(open(OUT))} if os.path.exists(OUT) else set()
 f = open(OUT, "a", newline=""); w = csv.writer(f)

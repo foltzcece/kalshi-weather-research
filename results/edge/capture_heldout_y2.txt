@@ -1,0 +1,19 @@
+Period 2025-11-20 .. 2026-09-21, tapes event_tapes.csv
+base: 3019 decided buckets with trades, rule correct 99.70%
+  fast feed, act 1 min after                   buckets 1347 on 294 days  staked $  89417  P&L $ 17925 (+20.0%, 95% [+18.5%,+21.7%])  losses 9  per active day $61.0
+  fast feed, act 2 min after                   buckets 1200 on 288 days  staked $  77690  P&L $ 14428 (+18.6%, 95% [+17.0%,+20.1%])  losses 9  per active day $50.1
+  fast feed, act 5 min after                   buckets  736 on 262 days  staked $  48864  P&L $  9607 (+19.7%, 95% [+17.6%,+21.8%])  losses 9  per active day $36.7
+  fast feed, act 10 min after                  buckets  648 on 255 days  staked $  42581  P&L $  8487 (+19.9%, 95% [+17.9%,+22.2%])  losses 9  per active day $33.3
+  fast feed, act 30 min after                  buckets  434 on 219 days  staked $  28968  P&L $  6082 (+21.0%, 95% [+18.3%,+23.9%])  losses 9  per active day $27.8
+  fast feed 2 min, only stale >=5c             buckets  980 on 280 days  staked $  59616  P&L $ 14489 (+24.3%, 95% [+22.3%,+26.4%])  losses 9  per active day $51.7
+  fast feed 2 min, max 20 contracts/bucket     buckets 1200 on 288 days  staked $  18436  P&L $  3350 (+18.2%, 95% [+16.7%,+19.8%])  losses 9  per active day $11.6
+  free feed, 10 min after it proves it         buckets  114 on  85 days  staked $   6705  P&L $   942 (+14.1%, 95% [+9.8%,+18.8%])  losses 6  per active day $11.1
+qc: 2790 decided buckets with trades, rule correct 99.86%
+  fast feed, act 1 min after                   buckets 1297 on 290 days  staked $  86329  P&L $ 17417 (+20.2%, 95% [+18.7%,+21.9%])  losses 4  per active day $60.1
+  fast feed, act 2 min after                   buckets 1150 on 283 days  staked $  74607  P&L $ 13931 (+18.7%, 95% [+17.1%,+20.3%])  losses 4  per active day $49.2
+  fast feed, act 5 min after                   buckets  693 on 256 days  staked $  46128  P&L $  9106 (+19.7%, 95% [+17.7%,+22.1%])  losses 4  per active day $35.6
+  fast feed, act 10 min after                  buckets  609 on 245 days  staked $  40239  P&L $  8052 (+20.0%, 95% [+17.8%,+22.3%])  losses 4  per active day $32.9
+  fast feed, act 30 min after                  buckets  398 on 206 days  staked $  27084  P&L $  5736 (+21.2%, 95% [+18.5%,+24.1%])  losses 4  per active day $27.8
+  fast feed 2 min, only stale >=5c             buckets  938 on 274 days  staked $  57056  P&L $ 14012 (+24.6%, 95% [+22.5%,+26.7%])  losses 4  per active day $51.1
+  fast feed 2 min, max 20 contracts/bucket     buckets 1150 on 283 days  staked $  17733  P&L $  3231 (+18.2%, 95% [+16.6%,+19.9%])  losses 4  per active day $11.4
+  free feed, 10 min after it proves it         buckets   99 on  78 days  staked $   5955  P&L $   922 (+15.5%, 95% [+11.2%,+20.1%])  losses 1  per active day $11.8

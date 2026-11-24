@@ -3,9 +3,12 @@ Output: rain_candles.csv (resumable)."""
 import csv, os, sys, time, datetime as dt
 from picks import KALSHI, get
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "rain_candles.csv")
+SET = os.environ.get("RAIN_SET", "")            # "" = Aug-Nov (history_more.csv); "summer" = Jun-Aug
+SFX = f"_{SET}" if SET else ""
+SRC = "history_summer.csv" if SET == "summer" else "history_more.csv"
+OUT = os.path.join(HERE, f"rain_candles{SFX}.csv")
 CUTOFF = dt.date(2026, 9, 21)
-rows = [r for r in csv.DictReader(open(os.path.join(HERE, "history_more.csv"))) if r["series"] == "KXRAIN" and r["snap"] == "morn_7am"]
+rows = [r for r in csv.DictReader(open(os.path.join(HERE, SRC))) if r["series"] == "KXRAIN" and r["snap"] == "morn_7am" and (SET != "summer" or r["date"] <= "2026-08-22")]
 todo = [r for r in rows if 0.03 <= (float(r["yes_bid"]) + float(r["yes_ask"])) / 2 <= 0.97]
 done = {r["ticker"] for r in csv.DictReader(open(OUT))} if os.path.exists(OUT) else set()
 f = open(OUT, "a", newline=""); w = csv.writer(f)

@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 rows = list(csv.DictReader(open(os.path.join(HERE, os.environ.get("HISTORY_FILE", "history.csv")))))
 CUTOFF = dt.date(2026, 9, 21)     # markets settled before this live in Kalshi's archive
 CT = dt.timezone(dt.timedelta(hours=-6))
-MAKER_RATE = 0.0175
+MAKER_RATE = 0.0     # weather series charge no maker fee (was 0.0175 until 2026-11-23)
 SNAP_TS = {"eve_6pm": lambda d: dt.datetime.combine(d - dt.timedelta(days=1), dt.time(18), CT),
            "morn_7am": lambda d: dt.datetime.combine(d, dt.time(7), CT)}
 

@@ -1,0 +1,58 @@
+Paper market-making backtest on Kalshi weather markets, from tick-level trades (mm/trades.csv).
+
+Strategy: every STEP seconds (default once an hour), for every market priced 10-90c, rest a YES bid at the best bid and a YES ask
+(= NO bid) at the best ask, SIZE contracts each, until the next re-quote. Stop quoting at CUTOFF local hour on the
+market's day. Never hold more than CAP contracts net in one market. Hold everything to settlement.
+
+The best bid/ask at each hour is rebuilt from trades: a taker selling YES prints at the bid, a taker
+buying YES prints at the ask (last of each within 2 h, and the last trade must sit between them).
+
+Fills (we can't see the historical queue, so three cases):
+  front   - we are first in line: any trade at our price fills us (best case)
+  queue   - QUEUE contracts are ahead of us (median size at the best price in today's live books):
+            they must trade first; a trade through our price fills us
+  through - only a trade strictly through our price fills us (worst case)
+Weather series charge no maker fee (fee_type 'quadratic', maker multiplier 0).
+
+Markets settled 2026-09-22..2026-11-19, re-quote every 300s, SIZE=10, CAP=50, queue ahead={'high': 25, 'rain': 55}
+± = 95% range on return, clustered by event-day (all buckets/cities of one day move together).
+$/day = average P&L per event-day (high: per city-day; rain: per day across all cities).
+
+=== HIGH ===
+  stop  9h  front     591,724 ctr filled  P&L $  -2,760  -0.47c/ctr  return  -0.9% ± 0.3%  $-6.68/day  halves -1.0% / -0.9%
+  stop  9h  queue     372,260 ctr filled  P&L $  -3,752  -1.01c/ctr  return  -2.0% ± 0.5%  $-9.08/day  halves -2.0% / -1.9%
+  stop  9h  through   291,203 ctr filled  P&L $  -3,681  -1.26c/ctr  return  -2.5% ± 0.6%  $-8.91/day  halves -2.6% / -2.3%
+  stop 13h  front     861,094 ctr filled  P&L $  -5,367  -0.62c/ctr  return  -1.3% ± 0.2%  $-12.99/day  halves -1.2% / -1.4%
+  stop 13h  queue     583,270 ctr filled  P&L $  -7,200  -1.23c/ctr  return  -2.5% ± 0.3%  $-17.43/day  halves -2.5% / -2.5%
+  stop 13h  through   474,438 ctr filled  P&L $  -7,813  -1.65c/ctr  return  -3.3% ± 0.4%  $-18.92/day  halves -3.4% / -3.2%
+  stop 17h  front     962,963 ctr filled  P&L $  -7,640  -0.79c/ctr  return  -1.6% ± 0.2%  $-18.50/day  halves -1.4% / -1.8%
+  stop 17h  queue     672,263 ctr filled  P&L $  -9,873  -1.47c/ctr  return  -3.0% ± 0.3%  $-23.91/day  halves -2.9% / -3.1%
+  stop 17h  through   556,344 ctr filled  P&L $ -10,400  -1.87c/ctr  return  -3.8% ± 0.4%  $-25.18/day  halves -3.8% / -3.8%
+  stop 24h  front     968,701 ctr filled  P&L $  -7,612  -0.79c/ctr  return  -1.6% ± 0.2%  $-18.43/day  halves -1.5% / -1.8%
+  stop 24h  queue     677,299 ctr filled  P&L $  -9,858  -1.46c/ctr  return  -2.9% ± 0.3%  $-23.87/day  halves -2.8% / -3.1%
+      fills during day before  150,181 ctr filled  P&L $  -1,770  -1.18c/ctr  return  -2.3% ± 1.1%
+      fills during 00-09h      222,079 ctr filled  P&L $  -1,982  -0.89c/ctr  return  -1.8% ± 0.9%
+      fills during 09-13h      211,011 ctr filled  P&L $  -3,448  -1.63c/ctr  return  -3.4% ± 1.1%
+      fills during 13-17h       88,993 ctr filled  P&L $  -2,674  -3.00c/ctr  return  -6.4% ± 1.7%
+      fills during 17-24h        5,036 ctr filled  P&L $      16  +0.31c/ctr  return  +0.6% ± 4.5%
+  stop 24h  through   560,971 ctr filled  P&L $ -10,405  -1.85c/ctr  return  -3.8% ± 0.3%  $-25.19/day  halves -3.8% / -3.7%
+
+=== RAIN ===
+  stop  9h  front     329,298 ctr filled  P&L $    -157  -0.05c/ctr  return  -0.1% ± 0.5%  $-2.66/day  halves -0.1% / -0.1%
+  stop  9h  queue     226,195 ctr filled  P&L $  -1,332  -0.59c/ctr  return  -1.2% ± 0.6%  $-22.58/day  halves -1.3% / -1.0%
+  stop  9h  through   208,297 ctr filled  P&L $  -1,381  -0.66c/ctr  return  -1.3% ± 0.7%  $-23.41/day  halves -1.1% / -1.5%
+  stop 13h  front     456,041 ctr filled  P&L $     -63  -0.01c/ctr  return  -0.0% ± 0.3%  $-1.06/day  halves -0.1% / +0.0%
+  stop 13h  queue     320,210 ctr filled  P&L $  -2,230  -0.70c/ctr  return  -1.4% ± 0.5%  $-37.79/day  halves -1.3% / -1.5%
+  stop 13h  through   290,683 ctr filled  P&L $  -2,444  -0.84c/ctr  return  -1.7% ± 0.5%  $-41.42/day  halves -1.4% / -2.0%
+  stop 17h  front     562,685 ctr filled  P&L $    -176  -0.03c/ctr  return  -0.1% ± 0.3%  $-2.99/day  halves -0.3% / +0.2%
+  stop 17h  queue     404,058 ctr filled  P&L $  -2,907  -0.72c/ctr  return  -1.5% ± 0.4%  $-49.27/day  halves -1.6% / -1.3%
+  stop 17h  through   364,976 ctr filled  P&L $  -3,107  -0.85c/ctr  return  -1.7% ± 0.4%  $-52.67/day  halves -1.7% / -1.8%
+  stop 24h  front     644,320 ctr filled  P&L $     109  +0.02c/ctr  return  +0.0% ± 0.3%  $+1.84/day  halves -0.1% / +0.1%
+  stop 24h  queue     473,809 ctr filled  P&L $  -2,880  -0.61c/ctr  return  -1.2% ± 0.4%  $-48.81/day  halves -1.3% / -1.1%
+      fills during day before   84,883 ctr filled  P&L $     -41  -0.05c/ctr  return  -0.1% ± 1.3%
+      fills during 00-09h      141,312 ctr filled  P&L $  -1,291  -0.91c/ctr  return  -1.8% ± 1.0%
+      fills during 09-13h       94,016 ctr filled  P&L $    -897  -0.95c/ctr  return  -1.9% ± 1.0%
+      fills during 13-17h       83,847 ctr filled  P&L $    -677  -0.81c/ctr  return  -1.7% ± 1.1%
+      fills during 17-24h       69,752 ctr filled  P&L $      27  +0.04c/ctr  return  +0.1% ± 0.8%
+  stop 24h  through   425,516 ctr filled  P&L $  -3,440  -0.81c/ctr  return  -1.6% ± 0.4%  $-58.30/day  halves -1.5% / -1.8%
+

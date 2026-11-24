@@ -11,7 +11,15 @@ Out-of-sample accuracy (lower is better):
     15:00 CT  n=517  market 0.1211   market+radar 0.1216   +ETA 0.1210
 
 Trading test (out-of-sample, pay the ask, 1 contract, edge >= 3c after fees, one trade per city-day = first signal):
+  market recalibrated only: 181 trades, won 119, return -0.4% per $ (P&L -0.51)
   market+radar: 303 trades, won 181, return -2.7% per $ (P&L -5.05)
   market+radar+storm ETA: 319 trades, won 196, return +1.1% per $ (P&L +2.22)
+
+Calibration: average market price vs how often it rained
+  priced 3%-15%: n=947  avg price 8%  rained 5%
+  priced 15%-30%: n=465  avg price 22%  rained 16%
+  priced 30%-50%: n=370  avg price 39%  rained 40%
+  priced 50%-70%: n=365  avg price 59%  rained 48%
+  priced 70%-97%: n=345  avg price 83%  rained 82%
 
 Weights (full data): const=-0.33, logit(price)=+1.10, now2=-0.64, now10=-0.01, now30=-0.16, now60=+0.29, max2_sofar=-0.36, max10_sofar=+0.16, rained_2km=+0.19, storm_30km=+0.17, eta_any=-0.95, eta_strong=-0.41, n_arriving=+0.08, cell_here=+0.94

@@ -66,26 +66,30 @@ def rest_of_day_peak(lat, lon, now_utc, local_end_utc):
     return max(temps) if temps else None, len(temps)
 
 
+import hrrr_noaa
+_CYCLE = {}
+
+
 def hrrr_peak(lat, lon, now_utc, local_end_utc):
-    """Warmest HRRR temperature left today (15-minute steps). HRRR is NOAA's 3 km model that
-    re-runs every hour and is built for the next ~18 hours, so it should know about this
-    afternoon's clouds and sea breezes better than the NWS hourly forecast does. Free via Open-Meteo."""
-    d = get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
-            "&minutely_15=temperature_2m&models=gfs_hrrr&temperature_unit=fahrenheit"
-            "&timezone=GMT&forecast_days=2")
-    temps = [t for ts, t in zip(d["minutely_15"]["time"], d["minutely_15"]["temperature_2m"])
-             if t is not None and now_utc <= dt.datetime.fromisoformat(ts).replace(tzinfo=dt.timezone.utc) < local_end_utc]
-    return max(temps) if temps else None
+    """Warmest HRRR temperature left today, straight from NOAA (hrrr_noaa.py). HRRR is NOAA's
+    3 km model that re-runs every hour and is built for the next ~18 hours. Switched from
+    Open-Meteo on 2026-11-22 because its shared free daily cap kept running out."""
+    key = now_utc.strftime("%Y%m%d%H")
+    if key not in _CYCLE:
+        _CYCLE.clear()
+        _CYCLE[key] = hrrr_noaa.latest_cycle(now_utc, lat, lon)
+    return hrrr_noaa.peak(lat, lon, now_utc, local_end_utc, _CYCLE[key])
 
 
 # Shadow test (cece approved 2026-11-21): each run also scores every market with HRRR as the
 # rest-of-day peak. Those rows go only to the calibration log as model "live_hrrr"; picks
 # still use the NWS hourly forecast until the comparison says otherwise.
 HRRR_ROWS = []
+OLD_ROWS = []    # side-by-side test (cece approved 2026-11-22): the live model as it was before the 11-21 fixes
 PEAK_LOG = []   # one row per city per run: final-high estimate from each source, for forecast_log
 
 
-def simulate(obs, rest_peak, hours_left):
+def simulate(obs, rest_peak, hours_left, old=False):
     """Return a list of simulated final whole-degree highs.
     Readings of the same plateau share one rounding error, so we draw it once per simulation
     (drawing it per reading would let the max of many draws drift upward)."""
@@ -98,7 +102,8 @@ def simulate(obs, rest_peak, hours_left):
             best = C2F(max(precise) + random.uniform(-0.05, 0.05))
         if coarse:
             best = max(best, C2F(max(coarse) + random.uniform(-0.5, 0.5)))
-        best += random.gauss(SETTLE_SHIFT, SETTLE_SD)
+        # old=True: the pre-2026-11-21 assumption (official high a touch ABOVE readings), kept for the side-by-side test
+        best += abs(random.gauss(0, 0.3)) if old else random.gauss(SETTLE_SHIFT, SETTLE_SD)
         if rest_peak is not None and hours_left > 0:
             best = max(best, random.gauss(rest_peak, REST_SIGMA))
         out.append(round(best))
@@ -189,6 +194,7 @@ def evaluate(bankroll=100.0):
     now = dt.datetime.now(dt.timezone.utc)
     rows = []
     HRRR_ROWS.clear()
+    OLD_ROWS.clear()
     PEAK_LOG.clear()
     for series, (city, lat, lon, off) in CITIES.items():
         local_now = now + dt.timedelta(hours=off)
@@ -216,6 +222,7 @@ def evaluate(bankroll=100.0):
         rng = high_so_far_range(obs)
         sims = simulate(obs, rest_peak, hours_left)
         rows += score(city, today, mkts, sims, high_so_far, rest_peak, local_now, bankroll, rng)
+        OLD_ROWS.extend(score(city, today, mkts, simulate(obs, rest_peak, hours_left, old=True), high_so_far, rest_peak, local_now, bankroll, rng))
         if h_peak is not None:
             h_rows = score(city, today, mkts, simulate(obs, h_peak, hours_left), high_so_far, h_peak, local_now, bankroll, rng)
             HRRR_ROWS.extend(h_rows)
@@ -225,6 +232,14 @@ def evaluate(bankroll=100.0):
                                      forecast=round(max(high_so_far, pk if pk is not None else -999), 1)))
     picks = sorted([r for r in rows if r["edge"] >= MIN_EDGE and not r["suspect"] and not r["boundary"] and not (r["side"] == "YES" and r["price"] < MIN_YES_PRICE)], key=lambda r: -r["edge"])
     return picks, rows
+
+
+def evaluate_old(bankroll=100.0):
+    """Old live model (no bucket-edge filter, old settlement assumption). Uses the markets and
+    readings fetched by the evaluate() call just before it in the same run."""
+    picks = sorted([r for r in OLD_ROWS if r["edge"] >= MIN_EDGE and not r["suspect"]
+                    and not (r["side"] == "YES" and r["price"] < MIN_YES_PRICE)], key=lambda r: -r["edge"])
+    return picks, list(OLD_ROWS)
 
 
 if __name__ == "__main__":

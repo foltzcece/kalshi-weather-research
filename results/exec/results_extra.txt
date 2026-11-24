@@ -1,0 +1,143 @@
+
+================ extra: 2239 markets ================
+
+--- 1. Fill realism (3c under ask, held to close) ---
+ fav, placed 6 PM day before:
+  pay the ask                        n=  367 traded=  367 filled 100%  return  -5.0% [-12.9%, +4.8%]  profit/100 chances $-2.95
+  touch (first in line)              n=  367 traded=  349 filled  95%  return  -0.3% [-10.5%, +10.2%]  profit/100 chances $-0.17
+  behind 100 contracts               n=  367 traded=  343 filled  93%  return  -1.7% [-12.0%, +8.3%]  profit/100 chances $-0.87
+  behind 500 contracts               n=  367 traded=  342 filled  93%  return  -2.0% [-12.2%, +7.4%]  profit/100 chances $-1.00
+  through (traded below us)          n=  367 traded=  342 filled  93%  return  -2.0% [-12.7%, +9.1%]  profit/100 chances $-1.00
+ fav, placed 7 AM:
+  pay the ask                        n=  426 traded=  426 filled 100%  return  +0.2% [-7.5%, +8.6%]  profit/100 chances $+0.12
+  touch (first in line)              n=  426 traded=  400 filled  94%  return  +4.5% [-4.9%, +14.5%]  profit/100 chances $+2.35
+  behind 100 contracts               n=  426 traded=  391 filled  92%  return  +2.7% [-6.3%, +11.6%]  profit/100 chances $+1.39
+  behind 500 contracts               n=  426 traded=  390 filled  92%  return  +2.6% [-6.9%, +10.8%]  profit/100 chances $+1.31
+  through (traded below us)          n=  426 traded=  390 filled  92%  return  +2.6% [-6.5%, +11.0%]  profit/100 chances $+1.31
+
+--- 2. Are late fills bad? Return of filled orders by local time of fill (3c, through) ---
+ fav, placed 6 PM day before:
+  a) evening before                  n=  212 traded=  212 filled 100%  return  -2.4% [-16.0%, +10.6%]  profit/100 chances $-1.29
+  b) 00-09                           n=   71 traded=   71 filled 100%  return  +0.7% [-19.6%, +22.5%]  profit/100 chances $+0.37
+  c) 09-12                           n=   31 traded=   31 filled 100%  return -16.8% [-47.3%, +13.1%]  profit/100 chances $-9.13
+  d) 12-15                           n=   23 traded=   23 filled 100%  return +11.1% [-21.7%, +46.1%]  profit/100 chances $+6.09
+  e) 15-24                           n=    5 traded=    5 filled 100%  return  +8.7% [-61.4%, +71.8%]  profit/100 chances $+4.80
+ fav, placed 7 AM:
+  b) 00-09                           n=  240 traded=  240 filled 100%  return  +0.6% [-12.4%, +11.2%]  profit/100 chances $+0.34
+  c) 09-12                           n=   99 traded=   99 filled 100%  return  +6.7% [-12.8%, +28.1%]  profit/100 chances $+3.68
+  d) 12-15                           n=   42 traded=   42 filled 100%  return  -2.7% [-29.4%, +30.8%]  profit/100 chances $-1.43
+  e) 15-24                           n=    9 traded=    9 filled 100%  return +32.3% [-13.0%, +70.5%]  profit/100 chances $+19.00
+ generic, placed 6 PM day before:
+  a) evening before                  n= 2389 traded= 2389 filled 100%  return  -7.8% [-10.1%, -5.0%]  profit/100 chances $-3.95
+  b) 00-09                           n=  673 traded=  673 filled 100%  return  -1.4% [-8.0%, +4.8%]  profit/100 chances $-0.67
+  c) 09-12                           n=  256 traded=  256 filled 100%  return  +1.2% [-13.1%, +12.4%]  profit/100 chances $+0.57
+  d) 12-15                           n=  187 traded=  187 filled 100%  return +12.8% [-4.0%, +32.6%]  profit/100 chances $+5.51
+  e) 15-24                           n=   51 traded=   51 filled 100%  return +15.9% [-8.8%, +50.2%]  profit/100 chances $+6.98
+ generic, placed 7 AM:
+  b) 00-09                           n= 2505 traded= 2505 filled 100%  return  -2.4% [-5.2%, +0.5%]  profit/100 chances $-1.22
+  c) 09-12                           n=  709 traded=  709 filled 100%  return  -4.6% [-14.3%, +3.2%]  profit/100 chances $-2.24
+  d) 12-15                           n=  264 traded=  264 filled 100%  return  -2.4% [-19.8%, +13.9%]  profit/100 chances $-1.06
+  e) 15-24                           n=   48 traded=   48 filled 100%  return  -3.9% [-37.1%, +29.7%]  profit/100 chances $-1.77
+
+--- 3. When to cancel an unfilled order (3c, through, unfilled = no bet) ---
+ fav, placed 6 PM day before:
+  pay the ask                        n=  367 traded=  367 filled 100%  return  -5.0% [-13.6%, +3.2%]  profit/100 chances $-2.95
+  cancel at 9 AM                     n=  367 traded=  283 filled  77%  return  -1.6% [-13.6%, +9.5%]  profit/100 chances $-0.68
+  cancel at 11 AM                    n=  367 traded=  308 filled  84%  return  -3.0% [-12.9%, +8.2%]  profit/100 chances $-1.39
+  cancel at noon                     n=  367 traded=  314 filled  86%  return  -3.1% [-13.5%, +7.5%]  profit/100 chances $-1.45
+  cancel at 1 PM                     n=  367 traded=  322 filled  88%  return  -3.2% [-13.0%, +7.5%]  profit/100 chances $-1.54
+  cancel at 3 PM                     n=  367 traded=  337 filled  92%  return  -2.1% [-13.0%, +7.7%]  profit/100 chances $-1.07
+  cancel at never (close)            n=  367 traded=  342 filled  93%  return  -2.0% [-11.0%, +9.1%]  profit/100 chances $-1.00
+  cancel noon, then pay the ask      n=  367 traded=  366 filled  86%  return  -1.8% [-10.8%, +7.3%]  profit/100 chances $-1.05
+ fav, placed 7 AM:
+  pay the ask                        n=  426 traded=  426 filled 100%  return  +0.2% [-7.6%, +7.6%]  profit/100 chances $+0.12
+  cancel at 9 AM                     n=  426 traded=  240 filled  56%  return  +0.6% [-10.2%, +11.8%]  profit/100 chances $+0.19
+  cancel at 11 AM                    n=  426 traded=  312 filled  73%  return  -0.7% [-10.9%, +10.5%]  profit/100 chances $-0.28
+  cancel at noon                     n=  426 traded=  339 filled  80%  return  +2.4% [-8.0%, +13.3%]  profit/100 chances $+1.05
+  cancel at 1 PM                     n=  426 traded=  356 filled  84%  return  +0.6% [-9.3%, +10.9%]  profit/100 chances $+0.30
+  cancel at 3 PM                     n=  426 traded=  381 filled  89%  return  +1.8% [-8.2%, +11.7%]  profit/100 chances $+0.91
+  cancel at never (close)            n=  426 traded=  390 filled  92%  return  +2.6% [-6.2%, +11.8%]  profit/100 chances $+1.31
+  cancel noon, then pay the ask      n=  426 traded=  426 filled  80%  return  +2.3% [-6.2%, +11.3%]  profit/100 chances $+1.38
+ generic, placed 6 PM day before:
+  pay the ask                        n= 3837 traded= 3837 filled 100%  return  -6.6% [-7.0%, -6.2%]  profit/100 chances $-3.58
+  cancel at 9 AM                     n= 3837 traded= 3062 filled  80%  return  -6.5% [-8.3%, -4.9%]  profit/100 chances $-2.58
+  cancel at 11 AM                    n= 3837 traded= 3228 filled  84%  return  -6.1% [-7.6%, -4.6%]  profit/100 chances $-2.56
+  cancel at noon                     n= 3837 traded= 3318 filled  86%  return  -5.9% [-7.4%, -4.6%]  profit/100 chances $-2.54
+  cancel at 1 PM                     n= 3837 traded= 3385 filled  88%  return  -5.6% [-7.0%, -4.3%]  profit/100 chances $-2.45
+  cancel at 3 PM                     n= 3837 traded= 3505 filled  91%  return  -5.0% [-6.1%, -3.9%]  profit/100 chances $-2.27
+  cancel at never (close)            n= 3837 traded= 3556 filled  93%  return  -4.8% [-5.8%, -3.7%]  profit/100 chances $-2.18
+  cancel noon, then pay the ask      n= 3837 traded= 3813 filled  86%  return  -4.2% [-4.9%, -3.5%]  profit/100 chances $-2.18
+ generic, placed 7 AM:
+  pay the ask                        n= 3777 traded= 3777 filled 100%  return  -6.1% [-6.5%, -5.8%]  profit/100 chances $-3.36
+  cancel at 9 AM                     n= 3777 traded= 2505 filled  66%  return  -2.4% [-5.1%, +0.2%]  profit/100 chances $-0.81
+  cancel at 11 AM                    n= 3777 traded= 3051 filled  81%  return  -3.5% [-5.2%, -1.7%]  profit/100 chances $-1.42
+  cancel at noon                     n= 3777 traded= 3214 filled  85%  return  -2.9% [-4.5%, -1.5%]  profit/100 chances $-1.23
+  cancel at 1 PM                     n= 3777 traded= 3340 filled  88%  return  -3.3% [-4.6%, -1.9%]  profit/100 chances $-1.44
+  cancel at 3 PM                     n= 3777 traded= 3478 filled  92%  return  -2.9% [-4.2%, -1.7%]  profit/100 chances $-1.31
+  cancel at never (close)            n= 3777 traded= 3526 filled  93%  return  -2.9% [-4.0%, -1.8%]  profit/100 chances $-1.33
+  cancel noon, then pay the ask      n= 3777 traded= 3765 filled  85%  return  -2.8% [-3.6%, -2.1%]  profit/100 chances $-1.50
+
+--- 4. Limit price (through, cancel at noon) ---
+ fav, placed 6 PM day before:
+  ask - 1c                           n=  367 traded=  336 filled  92%  return  -4.9% [-13.8%, +6.6%]  profit/100 chances $-2.51
+  ask - 2c                           n=  367 traded=  326 filled  89%  return  -3.4% [-13.7%, +6.6%]  profit/100 chances $-1.66
+  ask - 3c                           n=  367 traded=  314 filled  86%  return  -3.1% [-12.5%, +8.1%]  profit/100 chances $-1.45
+  ask - 5c                           n=  367 traded=  290 filled  79%  return  -5.5% [-16.4%, +5.5%]  profit/100 chances $-2.28
+  bid (join best bid)                n=  367 traded=  321 filled  87%  return  -5.0% [-15.1%, +5.6%]  profit/100 chances $-2.42
+  bid - 1c                           n=  367 traded=  313 filled  85%  return  -4.3% [-14.6%, +5.8%]  profit/100 chances $-2.01
+  bid - 2c                           n=  367 traded=  304 filled  83%  return  -3.3% [-15.8%, +7.7%]  profit/100 chances $-1.47
+  ask - 3c, or bid if spread>=3c     n=  367 traded=  310 filled  84%  return  -2.7% [-12.8%, +7.3%]  profit/100 chances $-1.22
+ fav, placed 7 AM:
+  ask - 1c                           n=  426 traded=  384 filled  90%  return  +1.4% [-8.3%, +10.9%]  profit/100 chances $+0.73
+  ask - 2c                           n=  426 traded=  364 filled  85%  return  +3.3% [-6.6%, +14.2%]  profit/100 chances $+1.61
+  ask - 3c                           n=  426 traded=  339 filled  80%  return  +2.4% [-7.7%, +12.2%]  profit/100 chances $+1.05
+  ask - 5c                           n=  426 traded=  301 filled  71%  return  +0.8% [-10.1%, +11.1%]  profit/100 chances $+0.31
+  bid (join best bid)                n=  426 traded=  353 filled  83%  return  +2.8% [-6.3%, +13.1%]  profit/100 chances $+1.27
+  bid - 1c                           n=  426 traded=  327 filled  77%  return  +3.5% [-6.5%, +14.4%]  profit/100 chances $+1.47
+  bid - 2c                           n=  426 traded=  301 filled  71%  return  +4.2% [-8.5%, +14.9%]  profit/100 chances $+1.58
+  ask - 3c, or bid if spread>=3c     n=  426 traded=  322 filled  76%  return  +3.7% [-8.0%, +15.1%]  profit/100 chances $+1.54
+ generic, placed 6 PM day before:
+  ask - 1c                           n= 3837 traded= 3521 filled  92%  return  -6.8% [-8.0%, -5.8%]  profit/100 chances $-3.22
+  ask - 2c                           n= 3837 traded= 3413 filled  89%  return  -6.6% [-7.8%, -5.4%]  profit/100 chances $-2.96
+  ask - 3c                           n= 3837 traded= 3318 filled  86%  return  -5.9% [-7.4%, -4.5%]  profit/100 chances $-2.54
+  ask - 5c                           n= 3837 traded= 3082 filled  80%  return  -5.6% [-7.4%, -3.9%]  profit/100 chances $-2.16
+  bid (join best bid)                n= 3837 traded= 3368 filled  88%  return  -6.3% [-7.7%, -5.1%]  profit/100 chances $-2.77
+  bid - 1c                           n= 3837 traded= 3255 filled  85%  return  -5.6% [-7.3%, -3.9%]  profit/100 chances $-2.34
+  bid - 2c                           n= 3837 traded= 3145 filled  82%  return  -5.5% [-7.2%, -3.9%]  profit/100 chances $-2.20
+  ask - 3c, or bid if spread>=3c     n= 3837 traded= 3244 filled  85%  return  -5.7% [-7.3%, -4.3%]  profit/100 chances $-2.38
+ generic, placed 7 AM:
+  ask - 1c                           n= 3777 traded= 3513 filled  93%  return  -3.6% [-4.6%, -2.6%]  profit/100 chances $-1.73
+  ask - 2c                           n= 3777 traded= 3380 filled  89%  return  -2.9% [-4.1%, -1.8%]  profit/100 chances $-1.31
+  ask - 3c                           n= 3777 traded= 3214 filled  85%  return  -2.9% [-4.4%, -1.2%]  profit/100 chances $-1.23
+  ask - 5c                           n= 3777 traded= 2885 filled  76%  return  -2.6% [-5.0%, -0.2%]  profit/100 chances $-0.97
+  bid (join best bid)                n= 3777 traded= 3261 filled  86%  return  -2.0% [-3.2%, -0.6%]  profit/100 chances $-0.84
+  bid - 1c                           n= 3777 traded= 3096 filled  82%  return  -1.7% [-3.4%, +0.1%]  profit/100 chances $-0.68
+  bid - 2c                           n= 3777 traded= 2926 filled  77%  return  -1.3% [-3.7%, +0.9%]  profit/100 chances $-0.47
+  ask - 3c, or bid if spread>=3c     n= 3777 traded= 3089 filled  82%  return  -1.8% [-3.8%, +0.1%]  profit/100 chances $-0.71
+ by spread at placement (generic, both times, ask-3c, cancel noon):
+  spread 0.01: pay ask               n= 3636 traded= 3636 filled 100%  return  -4.8% [-5.1%, -4.3%]  profit/100 chances $-2.55
+  spread 0.01: ask-3c                n= 3636 traded= 3015 filled  83%  return  -4.3% [-6.1%, -2.7%]  profit/100 chances $-1.75
+  spread 0.02: pay ask               n= 1073 traded= 1073 filled 100%  return  -5.7% [-6.5%, -5.1%]  profit/100 chances $-3.11
+  spread 0.02: ask-3c                n= 1073 traded=  902 filled  84%  return  -4.9% [-7.6%, -2.3%]  profit/100 chances $-2.02
+  spread >=0.03: pay ask             n= 2905 traded= 2905 filled 100%  return  -8.5% [-9.0%, -8.0%]  profit/100 chances $-4.75
+  spread >=0.03: ask-3c              n= 2905 traded= 2615 filled  90%  return  -4.4% [-5.7%, -3.0%]  profit/100 chances $-2.02
+
+--- 5. When to place (fav, 3c under ask, through, cancel at noon; quotes rebuilt from trades) ---
+  noon day before: pay ask           n=  253 traded=  253 filled 100%  return  +5.0% [-3.7%, +14.2%]  profit/100 chances $+2.99
+  noon day before: limit             n=  253 traded=  215 filled  85%  return  +6.4% [-5.9%, +17.3%]  profit/100 chances $+2.99
+  3 PM day before: pay ask           n=  325 traded=  325 filled 100%  return  -0.9% [-9.8%, +8.9%]  profit/100 chances $-0.54
+  3 PM day before: limit             n=  325 traded=  277 filled  85%  return  +0.4% [-11.0%, +12.2%]  profit/100 chances $+0.18
+  6 PM day before: pay ask           n=  367 traded=  367 filled 100%  return  -5.0% [-14.7%, +3.5%]  profit/100 chances $-2.95
+  6 PM day before: limit             n=  367 traded=  314 filled  86%  return  -3.1% [-12.7%, +5.8%]  profit/100 chances $-1.45
+  9 PM day before: pay ask           n=  373 traded=  373 filled 100%  return  -1.3% [-9.8%, +7.8%]  profit/100 chances $-0.77
+  9 PM day before: limit             n=  373 traded=  312 filled  84%  return  +0.0% [-10.5%, +11.4%]  profit/100 chances $+0.00
+  midnight: pay ask                  n=  377 traded=  377 filled 100%  return  +2.0% [-6.5%, +9.9%]  profit/100 chances $+1.17
+  midnight: limit                    n=  377 traded=  303 filled  80%  return  +5.0% [-5.5%, +13.9%]  profit/100 chances $+2.21
+  4 AM: pay ask                      n=  425 traded=  425 filled 100%  return  +1.5% [-5.4%, +8.8%]  profit/100 chances $+0.93
+  4 AM: limit                        n=  425 traded=  349 filled  82%  return  +5.5% [-2.7%, +14.5%]  profit/100 chances $+2.49
+  7 AM: pay ask                      n=  426 traded=  426 filled 100%  return  +0.2% [-8.2%, +8.8%]  profit/100 chances $+0.12
+  7 AM: limit                        n=  426 traded=  339 filled  80%  return  +2.4% [-8.8%, +11.8%]  profit/100 chances $+1.05
+  9 AM: pay ask                      n=  442 traded=  442 filled 100%  return  -6.1% [-13.6%, +1.0%]  profit/100 chances $-3.69
+  9 AM: limit                        n=  442 traded=  338 filled  76%  return  -4.0% [-12.6%, +4.2%]  profit/100 chances $-1.73
+  11 AM: pay ask                     n=  440 traded=  440 filled 100%  return  -0.2% [-8.7%, +7.4%]  profit/100 chances $-0.14
+  11 AM: limit                       n=  440 traded=  282 filled  64%  return  -0.4% [-10.5%, +9.4%]  profit/100 chances $-0.16

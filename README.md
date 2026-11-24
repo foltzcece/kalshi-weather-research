@@ -6,6 +6,8 @@ Backtests and paper-trading models for Kalshi's daily weather markets (city high
 
 **Status:** research and paper trading only. No real money has been traded yet. Results so far do not show a proven forecasting edge. See the [research summary](Kalshi_Weather_Research_Summary.pdf) for the findings.
 
+**Latest update (Nov 24, 2026):** [UPDATES.md](UPDATES.md). An out-of-sample audit cut the favorite strategy to roughly break-even; limit orders still add 4 to 5 points; the new lead is buying stale prices on buckets that can no longer win, which is in paper testing.
+
 Built with Claude as a coding assistant; research questions, testing decisions and GIS methods are mine.
 
 ## Main findings
@@ -27,6 +29,9 @@ Built with Claude as a coding assistant; research questions, testing decisions a
 | `src/live.py`, `src/onemin_calibrate.py` | Same-day model from live airport readings, calibrated on one-minute ASOS data |
 | `src/tracker.py` | Scores paper picks, Brier, and HRRR shadow test |
 | `src/radar_sample.py`, `src/storm_eta.py`, `src/rain_candles.py`, `src/rain_radar_test.py` | Radar features and storm-cell arrival times for rain markets |
+| `src/audit/`, `src/exec/`, `src/edge/`, `src/mm/`, `src/niches/` | Nov 23 studies: out-of-sample audit, execution, stale-price edge, market making, niche scan (see [UPDATES.md](UPDATES.md)) |
+| `src/lock.py`, `src/rainno.py`, `src/hrrr_noaa.py` | Paper tests for stale prices and rain NO; HRRR from NOAA |
+| `docs/` | Write-ups for the audit, execution study and stale-price edge |
 | `gis/` | Rain gauge locations for each Kalshi rain market (CSV and GeoJSON) |
 | `results/` | Text output of each backtest |
 

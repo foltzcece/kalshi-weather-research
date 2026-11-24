@@ -1,14 +1,15 @@
+# Re-run 2026-11-23 with maker fee 0 (weather markets charge no maker fee). Old results with 0.0175 fee: archive/limit_results_before_maker_fee_zero.txt
 
-=== eve_6pm: 604 past favourites priced 50-65c ===
-  pay the ask:        all 604 filled, return +3.8%
-  limit 1c under ask: filled 600/604 (99%), won 60%, return +7.0%  (same trades paying the ask: +3.3%)
-  limit 2c under ask: filled 592/604 (98%), won 60%, return +7.9%  (same trades paying the ask: +2.4%)
-  limit 3c under ask: filled 580/604 (96%), won 59%, return +8.4%  (same trades paying the ask: +1.0%)
-  limit 5c under ask: filled 548/604 (91%), won 57%, return +8.0%  (same trades paying the ask: -3.1%)
+=== eve_6pm: 605 past favourites priced 50-65c ===
+  pay the ask:        all 605 filled, return +3.9%
+  limit 1c under ask: filled 601/605 (99%), won 61%, return +9.0%  (same trades paying the ask: +3.4%)
+  limit 2c under ask: filled 593/605 (98%), won 60%, return +10.0%  (same trades paying the ask: +2.5%)
+  limit 3c under ask: filled 581/605 (96%), won 59%, return +10.5%  (same trades paying the ask: +1.1%)
+  limit 5c under ask: filled 549/605 (91%), won 57%, return +10.2%  (same trades paying the ask: -2.9%)
 
-=== morn_7am: 962 past favourites priced 50-65c ===
-  pay the ask:        all 962 filled, return +4.0%
-  limit 1c under ask: filled 950/962 (99%), won 61%, return +6.8%  (same trades paying the ask: +3.2%)
-  limit 2c under ask: filled 933/962 (97%), won 61%, return +7.4%  (same trades paying the ask: +2.0%)
-  limit 3c under ask: filled 915/962 (95%), won 60%, return +7.9%  (same trades paying the ask: +0.7%)
-  limit 5c under ask: filled 871/962 (91%), won 58%, return +8.2%  (same trades paying the ask: -2.7%)
+=== morn_7am: 963 past favourites priced 50-65c ===
+  pay the ask:        all 963 filled, return +4.1%
+  limit 1c under ask: filled 951/963 (99%), won 61%, return +8.8%  (same trades paying the ask: +3.3%)
+  limit 2c under ask: filled 934/963 (97%), won 61%, return +9.4%  (same trades paying the ask: +2.1%)
+  limit 3c under ask: filled 916/963 (95%), won 60%, return +10.0%  (same trades paying the ask: +0.8%)
+  limit 5c under ask: filled 872/963 (91%), won 58%, return +10.3%  (same trades paying the ask: -2.6%)

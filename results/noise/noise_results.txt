@@ -1,0 +1,53 @@
+1. HOW MANY THINGS WE TRIED (honest tally, Nov 20-24 2026)
+     40  45-day + 1-year backtests: long-shot YES, favourite bands, snapshots   [backtest_results.txt, favorite_results.txt]
+     60  Limit-order offset / fill-rule tuning (1-6c, touch/through, halves)   [tune_results.txt, limit_results*.txt]
+     12  Forecast models v1, v2 (ensembles, blends), live.py filters, HRRR   [v2_backtest_results.txt, archive/live_before_*]
+     20  Out-of-sample audit variants + walk-forward price bands   [audit/audit_results.txt, walkforward_results.txt]
+    116  Niche hunt: pre-registered temperature slices   [niches/slice_results.csv (disc rows)]
+     35  Niche hunt: rain slices + launch / new-market checks   [niches/rain_slices.py, launch_check.py]
+     36  Rain radar + my storm-motion models (by hour, fall + summer)   [rain_radar_results*.txt]
+     20  Rain price-band trading rules (bands x hourly/7 AM x season)   [rain slices, rainno]
+    116  Execution study cells (timing, offset, cancel, chase)   [exec/results_main.txt]
+     74  Market making (spreads, sides, bands, holding times)   [mm/mm_results*.txt]
+      5  Thanksgiving liquidity-reward placements   [mm/tg_*]
+     36  Speed-edge lock harvest variants (latency, caps, min price)   [edge/capture_test_period/latency/capped.txt]
+     54  Out-of-box: momentum, lead-lag, bucket sums, carry-over, lows lock   [ootb/*_results.txt]
+   ----
+    624  total trials (counting every variant; many are correlated, so the 'effective' number is lower)
+   ~13 distinct idea families
+
+2. THE HURDLE (|t| needed for a 5% false-alarm rate, two-sided)
+   classic single test:                      t > 1.96
+   'p < 0.005' (Benjamin et al. 2018):        t > 2.81   <- this is where 2.8 comes from
+   Harvey-Liu-Zhu 2016 (finance factor zoo): t > 3.00
+   Bonferroni for   13 trials:              t > 2.89
+   Bonferroni for  116 trials:              t > 3.52
+   Bonferroni for  624 trials:              t > 3.94
+   Bonferroni for 1000 trials:              t > 4.06
+
+3. THE LEADS (return per $ staked; t uses whole-day clusters; p two-sided)
+   lead                                      data                     bets days  return      t         p  Bonf Holm  BH  HLZ3  DSR
+   Highs lock, fast feed (+2 min, 20 ctr)    held-out 21 mo           2654  616  +19.2%  33.19  1.6e-241  yes  yes  yes  yes  1.00
+   Highs lock, free feed (paper-traded)      held-out 21 mo            242  184  +15.0%   8.19   2.7e-16  yes  yes  yes  yes  1.00
+   Lows lock, free feed (+15 min)            discovery 3 mo             94   44  +10.3%   5.06   4.1e-07  yes  yes  yes  yes  1.00
+   Midnight carry-over highs (+60 min)       held-out 21 mo             47   39  +19.1%   5.34   9.5e-08  yes  yes  yes  yes  0.38
+   Limit order vs paying ask (per chance)    untouched yr+11 cities   1885  431   +2.5%   7.78   7.2e-15  yes  yes  yes  yes  1.00
+   Favourite 50-65c + limit                  untouched yr+11 cities   1716  426   +0.7%   0.26   7.9e-01   no   no   no   no  0.01
+     (same, on the year it was tuned on)     tuning year              1454  344   +8.5%   2.99   2.7e-03   no   no   no   no  0.42
+   Rain NO at 50-70c, first hour seen        fall discovery 3 mo       296   82  +13.8%   1.87   6.1e-02   no   no   no   no  0.24
+   Rain NO at 50-70c, 7 AM run only          fall 3 mo                 127   64   +4.1%   0.39   6.9e-01   no   no   no   no  0.01
+   (corrections over M=624 trials; HLZ3 = t > 3.0; DSR = deflated Sharpe, chance the true daily Sharpe > the best of 624 lucky tries)
+   'limit vs ask' is a paired difference: dollars per chance (fill or not), so its 'return' = cents gained per $1 contract offered.
+
+4. PLACEBO: same stale prices, random buckets (outcome not known) - does the lock signal matter?
+   Highs lock, free feed (paper-traded)       real +15.0%   random-bucket placebo avg  -2.0% (97.5% of placebos below  +2.7%)   placebo p = 0.0005
+   Highs lock, fast feed (+2 min, 20 ctr)     real +19.2%   random-bucket placebo avg  -2.2% (97.5% of placebos below  -0.7%)   placebo p = 0.0005
+   Midnight carry-over highs (+60 min)        real +19.1%   random-bucket placebo avg  -2.0% (97.5% of placebos below  +8.9%)   placebo p = 0.0005
+   Lows lock, free feed (+15 min)             real +10.3%   random-bucket placebo avg  -4.9% (97.5% of placebos below  +2.3%)   placebo p = 0.0005
+
+Notes
+ - Rain NO rows rebuilt from rain_candles.csv with a simple 'first hour with mid 50-70c' rule (n=296, +13.8%),
+   close to but not identical to the original test (n=226, +11.8%); 7 AM uses history_more.csv snapshots.
+ - Lock leads: the outcome is almost known when we bet, so luck is NOT the main risk. The untested risks are
+   fills (25% of later prints assumed), queue position vs fast competitors, and live data feed timing.
+ - Lows lock and rain NO were found and measured on the same ~3 months; they have no held-out test yet.

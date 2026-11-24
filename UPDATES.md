@@ -1,6 +1,57 @@
 # Research updates
 
-## November 24, 2026: what changed since the Nov 22 upload
+## November 24, 2026 (evening): luck check and new stale-price variants
+
+Still research and paper trading only. No real money has been traded.
+
+### How many ideas I have tested, and the bar that implies
+
+Counting every variant since Nov 20, I have run about **624 trials** across roughly 13 idea families. If you test that many things, some will look good by chance. A Bonferroni correction for 624 trials puts the bar at **t > 3.94** for a 5% false-alarm rate, compared with 1.96 for a single test. Many of the trials are correlated, so this bar is conservative. Each t-statistic below clusters bets by day. Full table: [results/noise/noise_results.txt](results/noise/noise_results.txt); code: `src/noise/`.
+
+### Clears the bar
+
+| Idea | Data | Bets | Return per $ | t |
+| --- | --- | ---: | ---: | ---: |
+| Stale prices on decided high buckets, fast feed | 21 held-out months | 2,654 | +19.2% | 33.2 |
+| Same, free feed (the version being paper-traded) | 21 held-out months | 242 | +15.0% | 8.2 |
+| Limit order vs paying the ask | untouched year + 11 cities | 1,885 | +2.5¢ per chance | 7.8 |
+| Midnight carry-over highs | 21 held-out months | 47 | +19.1% | 5.3 |
+| Stale prices on decided low buckets, free feed | 3 months, **no hold-out yet** | 94 | +10.3% | 5.1 |
+
+The carry-over result rests on only 47 bets, and the lows result was found and measured on the same three months.
+
+### Does not clear the bar
+
+| Idea | Data | Bets | Return per $ | t |
+| --- | --- | ---: | ---: | ---: |
+| Favorite 50 to 65¢ + limit | untouched year + 11 cities | 1,716 | +0.7% | 0.26 |
+| (same, on the year it was tuned on) | tuning year | 1,454 | +8.5% | 2.99 |
+| Rain NO at 50 to 70¢ | fall 2026 | 127 to 296 | +4% to +14% | 0.4 to 1.9 |
+
+### Placebo test
+
+To check whether the stale-price profit really comes from knowing a bucket is decided, I bought random buckets at the same stale prices instead. The placebo lost 2% to 5% on average, while the real versions made +10% to +19% (placebo p = 0.0005 for all four). The profit comes from the information, not from something about cheap prices in general.
+
+### What is still untested
+
+Luck is not the main risk for the stale-price strategies, because the outcome is nearly known when the bet is placed. The real risk is execution. The simulations assume I would get 25% of the later trades at the stale price. Faster traders hit these prices within about 2 to 3 minutes, and my actual fills, queue position and live feed timing have not been measured. That is what the paper tests are for.
+
+### New out-of-the-box tests
+
+Daily lows follow the same settlement rule as highs, and the stale-price idea worked there in a first test (+10%, no hold-out yet). Highs decided just after midnight also work and are not a speed race, but they are rare. Momentum, neighboring-city lead-lag and bucket-sum arbitrage were dead ends. Details: [docs/out-of-the-box-edges.md](docs/out-of-the-box-edges.md).
+
+The paper test `src/lock.py` now covers decided lows and carry-over highs (excluding New York) alongside decided highs. All of these are scored at the December 4 review.
+
+### New code and results
+
+| Path | What it is |
+| --- | --- |
+| `src/noise/`, `results/noise/` | Trial tally, multiple-testing hurdles, day-clustered t-stats, deflated Sharpe, placebo |
+| `src/ootb/`, `results/ootb/` | Lows lock, midnight carry-over, momentum, lead-lag, bucket sums |
+| `src/lock.py` | Paper test now includes lows and carry-over highs |
+| `src/edge/run_window.py` | Updated run-window study |
+
+## November 24, 2026 (morning): what changed since the Nov 22 upload
 
 Still research and paper trading only. No real money has been traded. Every return below is from backtests or paper trades, and most of the ranges are wide.
 

@@ -1,0 +1,14 @@
+Period 2026-09-22..2026-11-19: 6 early-decided buckets on 5 city-days, rule correct 100.0%
+  act 15 min after decided           no trades
+  act 30 min after decided           no trades
+  act 60 min after decided           no trades
+  act 120 min after decided          no trades
+  act 240 min after decided          no trades
+  act 60 min, max 100 ctr            no trades
+Period 2024-12-01..2026-09-21: 56 early-decided buckets on 47 city-days, rule correct 100.0%
+  act 15 min after decided           buckets  16 days  16 staked $   220 P&L $    55 (+25.0% [+11.5%,+43.2%]) losses 0
+  act 30 min after decided           buckets  13 days  13 staked $   174 P&L $    41 (+23.8% [+10.0%,+44.7%]) losses 0
+  act 60 min after decided           buckets  11 days  11 staked $   141 P&L $    35 (+24.9% [+8.5%,+51.1%]) losses 0
+  act 120 min after decided          buckets   9 days   9 staked $   121 P&L $    30 (+25.1% [+7.1%,+56.2%]) losses 0
+  act 240 min after decided          buckets   8 days   8 staked $   100 P&L $    30 (+29.6% [+8.9%,+61.3%]) losses 0
+  act 60 min, max 100 ctr            buckets  11 days  11 staked $   416 P&L $   116 (+28.0% [+11.2%,+50.6%]) losses 0

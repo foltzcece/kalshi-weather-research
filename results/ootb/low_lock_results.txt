@@ -1,0 +1,10 @@
+settle rule on lows: round(min 5-min mean) == actual on 337/345 days
+dead buckets at 7 AM CST snapshot: 517  wrongly-dead (settled YES): 1
+dead buckets with yes bid >= 3c: 13 on 12 days
+           size   mean   max
+series                      
+KXLOWTAUS     2  0.435  0.47
+KXLOWTCHI     2  0.460  0.86
+KXLOWTDEN     5  0.332  0.74
+KXLOWTNYC     4  0.265  0.57
+NO at 1-bid, 20 ctr each: profit $86.20 on $169.80 staked

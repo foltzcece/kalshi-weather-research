@@ -1,0 +1,13 @@
+Snapshot bucket sums (hourly candle bid/ask), events: 12384
+              sb         sa
+count  12384.000  12384.000
+mean       0.951      1.121
+std        0.076      0.116
+min        0.140      0.890
+25%        0.930      1.060
+50%        0.970      1.100
+75%        1.000      1.150
+max        1.110      3.680
+sellall: positive after fees in 4 of 12384 snapshots; mean gain when positive 0.013
+buyall: positive after fees in 1 of 12384 snapshots; mean gain when positive 0.040
+before fees: sum bids >1 in 2234 ; sum asks <1 in 157
